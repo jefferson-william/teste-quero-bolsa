@@ -1,0 +1,14 @@
+{
+  "plugins": [
+    "react-hot-loader/babel",
+    [
+      "babel-plugin-module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "~": "./src"
+        }
+      }
+    ]
+  ]
+}
