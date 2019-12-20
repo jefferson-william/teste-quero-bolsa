@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 import colors from '~/styles/colors'
+import { breakpoints } from '~/styles/metrics'
 
 export default createGlobalStyle`
   *, *:before, *:after {
@@ -31,6 +32,20 @@ export default createGlobalStyle`
   a {
     font-weight: 500;
     text-decoration: none;
+  }
+  a, i {
     color: ${colors.blue.secondary};
+  }
+  b, strong {
+    font-family: 'Proxima Nova Bold';
+  }
+  .fal {
+    font-family: 'Font Awesome 5 Pro';
+    font-size: 24px;
+  }
+  .fab {
+    font-family: 'Font Awesome Brands Regular';
+    font-size: 24px;
+  }
   }
 `
