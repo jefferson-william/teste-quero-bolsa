@@ -1,7 +1,8 @@
 import React from 'react'
-import Header from '~/components/Header'
 import GlobalStyles from '~/styles/global'
 import GlobalFonts from '~/styles/fonts'
+import Header from '~/components/Header'
+import Navigation from '~/components/Navigation'
 import { App } from './styles'
 
 export default () => {
@@ -10,6 +11,7 @@ export default () => {
       <GlobalStyles />
       <GlobalFonts />
       <Header />
+      <Navigation />
     </App>
   )
 }
