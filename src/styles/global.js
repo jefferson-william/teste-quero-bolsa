@@ -36,6 +36,11 @@ export default createGlobalStyle`
   a, i {
     color: ${colors.blue.secondary};
   }
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
   b, strong {
     font-family: 'Proxima Nova Bold';
   }
@@ -47,5 +52,23 @@ export default createGlobalStyle`
     font-family: 'Font Awesome Brands Regular';
     font-size: 24px;
   }
+  .container {
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+  @media (min-width: ${breakpoints.md}) {
+    .container {
+      max-width: 750px;
+    }
+  }
+  @media (min-width: ${breakpoints.lg}) {
+    .container {
+      max-width: 970px;
+    }
+  }
+  @media (min-width: ${breakpoints.xl}) {
+    .container {
+      max-width: 1170px;
+    }
   }
 `

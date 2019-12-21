@@ -10,6 +10,9 @@ export default {
   green: {
     primary: '#0FA866',
   },
+  gray: {
+    primary: '#ECEEED',
+  },
   black: '#1F2D30',
   background: '#FBFBFB',
   modalOverlay: 'rgba(31, 45, 48, .88)',
