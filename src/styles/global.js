@@ -23,6 +23,7 @@ export default createGlobalStyle`
   body {
     font-family: 'Proxima Nova', Arial, Helvetica, 'Open Sans', sans-serif;
     font-size: 14px;
+    color: ${colors.black};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
