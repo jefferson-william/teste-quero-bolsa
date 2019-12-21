@@ -27,7 +27,7 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  a, button {
+  a, button, [role=button] {
     cursor: pointer;
   }
   a {

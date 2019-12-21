@@ -1,5 +1,6 @@
 import React from 'react'
 import SemesterFilter from '~/components/SemesterFilter'
+import Scholarships from '~/components/Scholarships'
 import { Main } from './styles'
 
 export default () => {
@@ -12,6 +13,7 @@ export default () => {
           atualizações com as melhores ofertas disponíveis.
         </p>
         <SemesterFilter />
+        <Scholarships />
       </div>
     </Main>
   )
