@@ -5,4 +5,7 @@ export const Main = styled.main`
     margin-bottom: 8px;
     font-family: 'Proxima Nova Bold';
   }
+  p {
+    margin-bottom: 32px;
+  }
 `

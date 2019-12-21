@@ -1,4 +1,5 @@
 import React from 'react'
+import SemesterFilter from '~/components/SemesterFilter'
 import { Main } from './styles'
 
 export default () => {
@@ -10,6 +11,7 @@ export default () => {
           Adicione bolsas de cursos e faculdades do seu interesse e receba
           atualizações com as melhores ofertas disponíveis.
         </p>
+        <SemesterFilter />
       </div>
     </Main>
   )
