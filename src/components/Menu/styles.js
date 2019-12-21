@@ -37,7 +37,7 @@ export const Menu = styled.nav`
       }
     }
   }
-  @media (min-width: ${breakpoints.lg}) {
+  @media (min-width: ${breakpoints.md}) {
     input,
     .menu__action {
       display: none;

@@ -24,7 +24,7 @@ export const Navigation = styled.nav`
       color: ${colors.black};
     }
   }
-  @media (min-width: ${breakpoints.lg}) {
+  @media (min-width: ${breakpoints.md}) {
     a {
       white-space: nowrap;
     }

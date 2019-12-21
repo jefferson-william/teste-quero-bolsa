@@ -24,7 +24,7 @@ export const SemesterFilter = styled.div`
       background: ${colors.blue.secondary};
     }
   }
-  @media (min-width: ${breakpoints.lg}) {
+  @media (min-width: ${breakpoints.md}) {
     justify-content: flex-end;
     display: flex;
     ul {

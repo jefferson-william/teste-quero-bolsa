@@ -20,7 +20,7 @@ export const Breadcrumb = styled.div`
       display: block;
     }
   }
-  @media (min-width: ${breakpoints.lg}) {
+  @media (min-width: ${breakpoints.md}) {
     i {
       display: none;
     }
