@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
 export const Main = styled.main`
-  h1 {
+  .main__title {
     margin-bottom: 8px;
     font-family: 'Proxima Nova Bold';
   }
-  p {
+  .main__description {
     margin-bottom: 32px;
   }
 `

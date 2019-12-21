@@ -6,8 +6,8 @@ export default () => {
   return (
     <Main id="Main" className="main" aria-label="Bolsas favoritas">
       <div className="container">
-        <h1>Bolsas favoritas</h1>
-        <p>
+        <h1 className="main__title">Bolsas favoritas</h1>
+        <p className="main__description">
           Adicione bolsas de cursos e faculdades do seu interesse e receba
           atualizações com as melhores ofertas disponíveis.
         </p>
