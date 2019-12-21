@@ -5,6 +5,7 @@ import GlobalFonts from '~/styles/fonts'
 import Header from '~/components/Header'
 import Navigation from '~/components/Navigation'
 import Breadcrumb from '~/components/Breadcrumb'
+import Main from '~/components/Main'
 import { App } from './styles'
 
 function Initial() {
@@ -15,6 +16,7 @@ function Initial() {
       <Header />
       <Navigation />
       <Breadcrumb />
+      <Main />
     </App>
   )
 }

@@ -33,6 +33,9 @@ export default createGlobalStyle`
   a {
     font-weight: 500;
     text-decoration: none;
+    &:hover {
+      color: ${colors.blue.primary};
+    }
   }
   a, i {
     color: ${colors.blue.secondary};
