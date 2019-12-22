@@ -6,17 +6,21 @@ import Header from '~/components/Header'
 import Navigation from '~/components/Navigation'
 import Breadcrumb from '~/components/Breadcrumb'
 import Main from '~/components/Main'
-import { App } from './styles'
+import Footer from '~/components/Footer'
+import { App, Wrap } from './styles'
 
 function Initial() {
   return (
     <App>
       <GlobalStyles />
       <GlobalFonts />
-      <Header />
-      <Navigation />
-      <Breadcrumb />
-      <Main />
+      <Wrap>
+        <Header />
+        <Navigation />
+        <Breadcrumb />
+        <Main />
+      </Wrap>
+      <Footer />
     </App>
   )
 }
