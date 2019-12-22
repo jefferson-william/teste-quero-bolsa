@@ -9,13 +9,30 @@ import FontAwesomeBrandsRegularEot from '~/assets/fonts/FontAwesomeBrands-Regula
 import FontAwesomeBrandsRegularTtf from '~/assets/fonts/FontAwesomeBrands-Regular.ttf'
 import FontAwesomeBrandsRegularSvg from '~/assets/fonts/FontAwesomeBrands-Regular.svg'
 import FontAwesomeBrandsRegularWoff from '~/assets/fonts/FontAwesomeBrands-Regular.woff'
+import FontAwesomeSolidRegularEot from '~/assets/fonts/FontAwesomeSolid-Bold.eot'
+import FontAwesomeSolidRegularTtf from '~/assets/fonts/FontAwesomeSolid-Bold.ttf'
+import FontAwesomeSolidRegularSvg from '~/assets/fonts/FontAwesomeSolid-Bold.svg'
+import FontAwesomeSolidRegularWoff from '~/assets/fonts/FontAwesomeSolid-Bold.woff'
+import FontAwesomeSolidRegularWoff2 from '~/assets/fonts/FontAwesomeSolid-Bold.woff2'
 import '~/styles/font-awesome-brands.css'
 
 export default createGlobalStyle`
   @font-face {
+    font-family: 'Font Awesome Solid Regular';
+    src: url(${FontAwesomeSolidRegularEot});
+    src: local('Font Awesome Solid Regular'), local('FontAwesomeSolidRegular-Regular'),
+      url(${FontAwesomeSolidRegularEot}) format('embedded-opentype'),
+      url(${FontAwesomeSolidRegularWoff}) format('woff'),
+      url(${FontAwesomeSolidRegularWoff2}) format('woff2'),
+      url(${FontAwesomeSolidRegularSvg}) format('svg'),
+      url(${FontAwesomeSolidRegularTtf}) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
     font-family: 'Font Awesome Brands Regular';
     src: url(${FontAwesomeBrandsRegularEot});
-    src: local('Proxima Nova'), local('ProximaNova-Regular'),
+    src: local('Font Awesome Brands Regular'), local('FontAwesomeBrandsRegular-Regular'),
       url(${FontAwesomeBrandsRegularEot}) format('embedded-opentype'),
       url(${FontAwesomeBrandsRegularWoff}) format('woff'),
       url(${FontAwesomeBrandsRegularSvg}) format('svg'),

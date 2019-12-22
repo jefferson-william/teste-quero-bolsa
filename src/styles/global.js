@@ -56,6 +56,10 @@ export default createGlobalStyle`
     font-family: 'Font Awesome Brands Regular';
     font-size: 24px;
   }
+  .fas {
+    font-family: 'Font Awesome Solid Regular';
+    font-size: 24px;
+  }
   .container {
     margin: 0 auto;
     padding: 0 16px;
