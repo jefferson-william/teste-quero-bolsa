@@ -40,12 +40,16 @@ export default createGlobalStyle`
   a, i {
     color: ${colors.blue.secondary};
   }
+  hr {
+    width: 100%;
+    border-top: 1px solid ${colors.gray.primary};
+  }
   img {
     width: 100%;
     height: auto;
     object-fit: contain;
   }
-  b, strong {
+  b, strong, button {
     font-family: 'Proxima Nova Bold';
   }
   .fal {

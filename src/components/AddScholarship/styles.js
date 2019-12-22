@@ -7,6 +7,7 @@ export const AddScholarship = styled.div`
   justify-content: center;
   align-items: center;
   display: flex;
+  height: 100%;
   padding: 24px;
   text-align: center;
   background: #fff;
