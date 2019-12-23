@@ -3,7 +3,11 @@ import { Scholarship } from './styles'
 
 export default () => {
   return (
-    <Scholarship id="Scholarship" className="scholarship" aria-label="Bolsa">
+    <Scholarship
+      id="Scholarship"
+      className="scholarship"
+      role="form"
+      aria-label="Bolsa">
       <img
         src="https://www.tryimg.com/u/2019/04/16/unip.png"
         alt="Logo da faculdade"
@@ -33,10 +37,10 @@ export default () => {
         <span>/mês</span>
       </p>
       <div className="scholarship__buttons">
-        <button className="scholarship__delete" type="button">
+        <button className="button" type="button">
           Excluir
         </button>
-        <button className="scholarship__offer" type="button">
+        <button className="button button--submit" type="button">
           Ver oferta
         </button>
       </div>

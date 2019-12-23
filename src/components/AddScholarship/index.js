@@ -1,20 +1,27 @@
-import React from 'react'
+import React, { useState, useCallback } from 'react'
+import AddScholarshipModal from '~/components/AddScholarshipModal'
 import { AddScholarship } from './styles'
 
 export default () => {
+  const [openModal, UseOpenModal] = useState(false)
+
+  const OpenModal = useCallback(() => UseOpenModal(true), [])
+
   return (
     <AddScholarship
       id="AddScholarship"
       className="add-scholarship"
       role="button"
-      aria-label="Adicionar bolsa">
-      <i className="fal fa-plus-circle" />
-      <strong>Adicionar bolsa</strong>
-      <p>
+      aria-label="Adicionar bolsa"
+      onClick={OpenModal}>
+      <i className="add-scholarship__icon fal fa-plus-circle" />
+      <strong className="add-scholarship__title">Adicionar bolsa</strong>
+      <p className="add-scholarship__description">
         Clique para adicionar bolsas de
         <br />
         cursos do seu interesse
       </p>
+      {openModal && <AddScholarshipModal />}
     </AddScholarship>
   )
 }

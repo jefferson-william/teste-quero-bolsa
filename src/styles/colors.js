@@ -12,6 +12,7 @@ export default {
   },
   gray: {
     primary: '#ECEEED',
+    secondary: '#CCC',
   },
   black: '#1F2D30',
   background: '#FBFBFB',

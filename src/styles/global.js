@@ -52,6 +52,43 @@ export default createGlobalStyle`
   b, strong, button {
     font-family: 'Proxima Nova Bold';
   }
+  input.checkbox {
+    position: relative;
+    top: -1px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid ${colors.black};
+    appearance: none;
+    border-radius: 2px;
+    &:checked {
+      border-color: ${colors.blue.primary};
+      background: ${colors.blue.primary};
+    }
+    &:after {
+      margin: 0 0 2px 2px;
+      font-family: 'Font Awesome Solid Regular';
+      color: #fff;
+      font-size: 10px;
+      content: '\f00c';
+    }
+  }
+  .button {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid ${colors.blue.secondary};
+    padding: 16px;
+    font-size: 16px;
+    color: ${colors.blue.secondary};
+    background: #fff;
+    & + .button {
+      margin-left: 16px;
+    }
+  }
+  .button--submit {
+    border: 1px solid ${colors.yellow.secondary};
+    color: ${colors.black};
+    background: ${colors.yellow.primary};
+  }
   .fal {
     font-family: 'Font Awesome 5 Pro';
     font-size: 24px;
@@ -67,6 +104,23 @@ export default createGlobalStyle`
   .container {
     margin: 0 auto;
     padding: 0 16px;
+  }
+  .input-range {
+    width: 96%;
+    .input-range__track {
+      background: ${colors.gray.secondary};
+    }
+    .input-range__track--active {
+      background: ${colors.blue.primary};
+    }
+    .input-range__slider {
+      width: 1.5rem;
+      height: 1.5rem;
+      border: 2px solid ${colors.blue.primary};
+      margin-top: -0.88rem;
+      margin-left: -1rem;
+      background: #fff;
+    }
   }
   @media (min-width: ${breakpoints.md}) {
     .container {
