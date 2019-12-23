@@ -15,7 +15,6 @@ export const AddScholarshipModal = styled.form`
   text-align: left;
   z-index: 1;
   cursor: default;
-  background: ${colors.modalOverlay};
   label {
     font-family: 'Proxima Nova Bold';
     font-size: 14px;
@@ -27,6 +26,15 @@ export const AddScholarshipModal = styled.form`
   }
   hr {
     margin: 16px 0;
+  }
+  .add-scholarship-modal__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background: ${colors.modalOverlay};
   }
   .add-scholarship-modal__container {
     position: relative;
@@ -41,6 +49,7 @@ export const AddScholarshipModal = styled.form`
     right: 16px;
     border: 0;
     background: none;
+    pointer-events: none;
   }
   .add-scholarship-modal__close-icon {
     font-size: 24px;

@@ -4,7 +4,7 @@ import Field from '~/components/Field'
 import { AddScholarshipModal } from './styles'
 import 'react-input-range/lib/css/index.css'
 
-export default () => {
+export default ({ handleToggleModal }) => {
   const [range, UseRange] = useState(10000)
 
   const rangeFormated = useMemo(() => {
@@ -17,6 +17,10 @@ export default () => {
       className="add-scholarship-modal"
       role="dialog"
       aria-label="Adicionar bolsa">
+      <div
+        className="add-scholarship-modal__overlay"
+        onClick={handleToggleModal}
+      />
       <div className="add-scholarship-modal__container">
         <button type="button" className="add-scholarship-modal__close-action">
           <i className="add-scholarship-modal__close-icon fal fa-times" />
