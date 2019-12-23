@@ -20,20 +20,45 @@ export const Footer = styled.footer`
     background: ${colors.blue.secondary};
   }
   .footer__information {
-    padding-bottom: 32px;
-    div {
-      margin-top: 32px;
-    }
-    i {
-      position: relative;
-      bottom: -6px;
-      margin-right: 16px;
-      margin-bottom: 8px;
-      float: left;
-    }
+    grid-template-areas:
+      'whatsapp whatsapp  whatsapp'
+      'other    other     other';
+    display: grid;
+    padding: 0;
     p {
       font-size: 16px;
+    }
+    > div {
+      padding: 16px 0;
+    }
+  }
+  .footer__whatsapp,
+  .footer__other {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    i {
       margin-bottom: 8px;
+    }
+  }
+  .footer__whatsapp {
+    grid-area: whatsapp;
+    border-bottom: 1px solid ${colors.blue.primary};
+    i {
+      margin: 8px 16px 0 0;
+      float: left;
+    }
+  }
+  .footer__whatsapp__content {
+    width: 256px;
+  }
+  .footer__whatsapp__text {
+    margin-top: 8px;
+    font-family: 'Proxima Nova';
+  }
+  .footer__other {
+    & + .footer__other {
+      border-left: 1px solid ${colors.blue.primary};
     }
   }
   .footer__last {
@@ -45,10 +70,54 @@ export const Footer = styled.footer`
       font-size: 14px;
     }
   }
-  @media (min-width: ${breakpoints.md}) {
+  .footer__text__desktop {
+    display: none;
+  }
+  @media (min-width: ${breakpoints.lg}) {
     .footer__information {
-      display: grid;
-      grid-template-columns: 50fr 50fr;
+      display: flex;
+      padding: 0 16px;
+      span {
+        display: inline-block;
+        margin-top: 8px;
+      }
+      > div {
+        flex: 1;
+        border: 0;
+        margin: 32px 0;
+      }
+      p {
+        display: block;
+      }
+      i {
+        margin: 8px 16px 0 0;
+        float: left;
+      }
+    }
+    .footer__whatsapp,
+    .footer__other {
+      display: block;
+    }
+    .footer__other + .footer__other {
+      border: 0;
+    }
+    .footer__whatsapp {
+      grid-area: none;
+      p {
+        white-space: nowrap;
+      }
+    }
+    .footer__other {
+    }
+    .footer__whatsapp__content {
+      width: auto;
+      margin: 0;
+    }
+    p.footer__text__mobile {
+      display: none;
+    }
+    p.footer__text__desktop {
+      display: block;
     }
   }
   @media (min-width: ${breakpoints.lg}) {
