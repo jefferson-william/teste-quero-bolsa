@@ -1,18 +1,40 @@
-import React, { useState, useMemo } from 'react'
-import { useSelector } from 'react-redux'
+import React, { useState, useMemo, useCallback } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import InputRange from 'react-input-range'
 import Field from '~/components/Field'
+import * as FavoriteScholarshipsAction from '~/store/actions/FavoriteScholarships'
 import ModalScholarship from '~/components/ModalScholarship'
 import { AddScholarshipModal } from './styles'
 import 'react-input-range/lib/css/index.css'
 
 export default ({ handleToggleModal }) => {
+  const dispatch = useDispatch()
+  const [checkedIds, UseCheckedIds] = useState([])
   const [range, UseRange] = useState(10000)
   const scholarships = useSelector(state => state.Scholarships.data)
 
   const rangeFormated = useMemo(() => {
     return `${range.toLocaleString('pt-BR')},00`
   }, [range])
+
+  const ToggleModal = useCallback(handleToggleModal, [])
+
+  const HandleSubmit = useCallback(() => {
+    dispatch(FavoriteScholarshipsAction.SetIds(checkedIds))
+
+    ToggleModal()
+  }, [checkedIds])
+
+  const HandleChecked = useCallback(
+    (checked, id) => {
+      UseCheckedIds(prevIds => {
+        return checked
+          ? [...prevIds, id]
+          : [...prevIds.filter(value => value !== id)]
+      })
+    },
+    [checkedIds, range]
+  )
 
   return (
     <AddScholarshipModal
@@ -113,10 +135,13 @@ export default ({ handleToggleModal }) => {
           ))}
         </div>
         <div className="add-scholarship-modal__content add-scholarship-modal__buttons">
-          <button type="button" className="button">
+          <button type="button" className="button" onClick={ToggleModal}>
             Cancelar
           </button>
-          <button type="button" className="button button--submit">
+          <button
+            type="button"
+            className="button button--submit"
+            onClick={HandleSubmit}>
             Adicionar bolsa(s)
           </button>
         </div>

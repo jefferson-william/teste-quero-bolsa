@@ -12,7 +12,7 @@ export const ModalScholarship = styled.div`
     padding-right: 32px;
   }
   img {
-    max-width: 176px;
+    width: 128px;
     height: 48px;
   }
   .modal-scholarship__name {

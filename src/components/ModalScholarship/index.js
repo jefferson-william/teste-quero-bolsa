@@ -1,11 +1,16 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useRef } from 'react'
 import { ModalScholarship } from './styles'
 
-export default ({ data }) => {
+export default ({ data, handleChecked }) => {
+  const input = useRef(null)
   const [checked, UseChecked] = useState(false)
 
   const ToggleChecked = useCallback(() => {
     UseChecked(!checked)
+
+    const id = input.current.value
+
+    handleChecked(!checked, id)
   }, [checked])
 
   return (
@@ -18,8 +23,10 @@ export default ({ data }) => {
         <input
           type="checkbox"
           className="checkbox"
-          value={data.shortid}
+          value={data.id}
           checked={checked}
+          ref={input}
+          readOnly
         />
       </div>
       <div>
