@@ -37,11 +37,13 @@ export default () => {
       <div>
         <AddScholarship />
       </div>
-      {favoriteScholarships.map(scholarship => (
-        <div key={scholarship.id}>
-          <Scholarship data={scholarship} />
-        </div>
-      ))}
+      {favoriteScholarships
+        .sort((a, b) => a.university.name.localeCompare(b.university.name))
+        .map(scholarship => (
+          <div key={scholarship.id}>
+            <Scholarship data={scholarship} />
+          </div>
+        ))}
     </Scholarships>
   )
 }

@@ -126,16 +126,18 @@ export default ({ handleToggleModal }) => {
         </div>
         <hr />
         <div className="add-scholarship-modal__scholarships">
-          {scholarships.map(scholarship => (
-            <>
-              <ModalScholarship
-                key={scholarship.id}
-                data={scholarship}
-                handleChecked={HandleChecked}
-              />
-              <hr />
-            </>
-          ))}
+          {scholarships
+            .sort((a, b) => a.university.name.localeCompare(b.university.name))
+            .map(scholarship => (
+              <>
+                <ModalScholarship
+                  key={scholarship.id}
+                  data={scholarship}
+                  handleChecked={HandleChecked}
+                />
+                <hr />
+              </>
+            ))}
         </div>
         <div className="add-scholarship-modal__content add-scholarship-modal__buttons">
           <button type="button" className="button" onClick={ToggleModal}>
