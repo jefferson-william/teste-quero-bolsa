@@ -2,7 +2,7 @@ import React from 'react'
 import Stars from '~/components/Stars'
 import { Scholarship } from './styles'
 
-export default ({ data }) => {
+export default ({ data, handleRemove }) => {
   return (
     <Scholarship
       id="Scholarship"
@@ -46,7 +46,10 @@ export default ({ data }) => {
         <span>/mês</span>
       </p>
       <div className="scholarship__buttons">
-        <button className="button" type="button">
+        <button
+          className="button"
+          type="button"
+          onClick={() => handleRemove(data.id)}>
           Excluir
         </button>
         <button

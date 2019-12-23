@@ -1,9 +1,9 @@
-import React, { useEffect, useMemo } from 'react'
+import React, { useEffect, useMemo, useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import useAxios from '~/config/axios'
 import AddScholarship from '~/components/AddScholarship'
 import Scholarship from '~/components/Scholarship'
-import { ScholarshipsAction } from '~/store/actions'
+import { ScholarshipsAction, FavoriteScholarshipsAction } from '~/store/actions'
 import { Scholarships } from './styles'
 
 export default () => {
@@ -23,6 +23,15 @@ export default () => {
     )
   }, [favoritedScholarshipsIds, scholarships])
 
+  const HandleRemove = useCallback(
+    id => {
+      const ids = favoritedScholarshipsIds.filter(value => value !== id)
+
+      dispatch(FavoriteScholarshipsAction.SetIds(ids))
+    },
+    [favoritedScholarshipsIds]
+  )
+
   useEffect(() => {
     if (!data) return
 
@@ -41,7 +50,7 @@ export default () => {
         .sort((a, b) => a.university.name.localeCompare(b.university.name))
         .map(scholarship => (
           <div key={scholarship.id}>
-            <Scholarship data={scholarship} />
+            <Scholarship data={scholarship} handleRemove={HandleRemove} />
           </div>
         ))}
     </Scholarships>
