@@ -83,6 +83,11 @@ export default createGlobalStyle`
     & + .button {
       margin-left: 16px;
     }
+    &:disabled {
+      border-color: ${colors.gray.secondary};
+      color: ${colors.gray.secondary};
+      background: ${colors.gray.primary};
+    }
   }
   .button--submit {
     border: 1px solid ${colors.yellow.secondary};

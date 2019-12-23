@@ -49,8 +49,11 @@ export default ({ data }) => {
         <button className="button" type="button">
           Excluir
         </button>
-        <button className="button button--submit" type="button">
-          Ver oferta
+        <button
+          className="button button--submit"
+          type="button"
+          disabled={!data.enabled}>
+          {data.enabled ? 'Ver oferta' : 'Indisponível'}
         </button>
       </div>
     </Scholarship>
