@@ -1,7 +1,7 @@
 import React from 'react'
 import { Scholarship } from './styles'
 
-export default () => {
+export default ({ data }) => {
   return (
     <Scholarship
       id="Scholarship"
@@ -9,15 +9,15 @@ export default () => {
       role="form"
       aria-label="Bolsa">
       <img
-        src="https://www.tryimg.com/u/2019/04/16/unip.png"
-        alt="Logo da faculdade"
+        src={data.university.logo_url}
+        alt={`Logo da faculdade ${data.university.name}`}
       />
-      <strong>Anhanguera</strong>
+      <strong>{data.university.name}</strong>
       <a className="scholarship__title" href="#Scholarship">
-        Arquitetura e Urbanismo
+        {data.course.name}
       </a>
       <div className="scholarship__punctuation">
-        <b className="scholarship__score">3.8</b>
+        <b className="scholarship__score">{data.university.score.toFixed(1)}</b>
         <div className="stars">
           <i className="fas fa-star" />
           <i className="fas fa-star" />
@@ -27,13 +27,27 @@ export default () => {
         </div>
       </div>
       <hr />
-      <strong className="scholarship__period">Presencial · Noite</strong>
-      <p className="scholarship__when">Início das aulas em: 05/03/2020</p>
+      <strong className="scholarship__period">
+        {data.course.kind} · {data.course.shift}
+      </strong>
+      <p className="scholarship__when">
+        Início das aulas em: {data.start_date}
+      </p>
       <hr />
       <b className="scholarship__text">Mensalidade com o Quero Bolsa:</b>
-      <p className="scholarship__original-price">R$ 1.487,31</p>
+      <p className="scholarship__original-price">
+        {data.full_price.toLocaleString('pt-BR', {
+          style: 'currency',
+          currency: 'BRL',
+        })}
+      </p>
       <p>
-        <span className="scholarship__discount-price">R$ 453,63</span>
+        <span className="scholarship__discount-price">
+          {data.price_with_discount.toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+          })}
+        </span>
         <span>/mês</span>
       </p>
       <div className="scholarship__buttons">

@@ -39,7 +39,7 @@ export default () => {
       </div>
       {favoriteScholarships.map(scholarship => (
         <div key={scholarship.id}>
-          <Scholarship scholarship={scholarship} />
+          <Scholarship data={scholarship} />
         </div>
       ))}
     </Scholarships>

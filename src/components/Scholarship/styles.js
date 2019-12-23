@@ -7,14 +7,15 @@ export const Scholarship = styled.div`
   justify-content: center;
   align-items: center;
   display: flex;
+  height: 100%;
   padding: 24px;
   text-align: center;
   background: #fff;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 2px 1px -1px;
   img {
-    max-width: 260px;
-    max-height: 56px;
+    width: 160px;
+    height: 56px;
     margin-bottom: 32px;
   }
   strong {

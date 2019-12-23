@@ -14,7 +14,10 @@ export default ({ handleToggleModal }) => {
   const scholarships = useSelector(state => state.Scholarships.data)
 
   const rangeFormated = useMemo(() => {
-    return `${range.toLocaleString('pt-BR')},00`
+    return `${range.toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+    })}`
   }, [range])
 
   const ToggleModal = useCallback(handleToggleModal, [])
