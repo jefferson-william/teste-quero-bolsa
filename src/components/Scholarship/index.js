@@ -1,4 +1,5 @@
 import React from 'react'
+import Stars from '~/components/Stars'
 import { Scholarship } from './styles'
 
 export default ({ data }) => {
@@ -18,13 +19,7 @@ export default ({ data }) => {
       </a>
       <div className="scholarship__punctuation">
         <b className="scholarship__score">{data.university.score.toFixed(1)}</b>
-        <div className="stars">
-          <i className="fas fa-star" />
-          <i className="fas fa-star" />
-          <i className="fas fa-star" />
-          <i className="fas fa-star-half-alt" />
-          <i className="fal fa-star" />
-        </div>
+        <Stars data={data.university.score} />
       </div>
       <hr />
       <strong className="scholarship__period">

@@ -37,12 +37,6 @@ export const Scholarship = styled.div`
     display: block;
     margin: 8px 0;
   }
-  .stars {
-    i {
-      font-size: 16px;
-      color: ${colors.yellow.primary};
-    }
-  }
   .scholarship__punctuation {
     align-items: center;
     display: flex;
