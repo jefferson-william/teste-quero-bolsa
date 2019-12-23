@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react'
 import InputRange from 'react-input-range'
 import Field from '~/components/Field'
+import ModalScholarship from '~/components/ModalScholarship'
 import { AddScholarshipModal } from './styles'
 import 'react-input-range/lib/css/index.css'
 
@@ -98,59 +99,7 @@ export default ({ handleToggleModal }) => {
         </div>
         <hr />
         <div className="add-scholarship-modal__scholarships">
-          <div className="add-scholarship-modal__scholarship">
-            <div>
-              <input type="checkbox" className="checkbox" />
-            </div>
-            <div>
-              <img
-                src="https://www.tryimg.com/u/2019/04/16/unip.png"
-                alt="Logo da faculdade"
-              />
-            </div>
-            <div className="add-scholarship-modal__info">
-              <div>
-                <div className="add-scholarship-modal__name">Administração</div>
-                <div className="add-scholarship-modal__type">Bacharelado</div>
-              </div>
-              <div>
-                <div className="add-scholarship-modal__discount">
-                  Bolsa de{' '}
-                  <span className="add-scholarship-modal__discount-percentage">
-                    50%
-                  </span>
-                </div>
-                <div className="add-scholarship-modal__price">R$ 294/mês</div>
-              </div>
-            </div>
-          </div>
-          <hr />
-          <div className="add-scholarship-modal__scholarship">
-            <div>
-              <input type="checkbox" className="checkbox" />
-            </div>
-            <div>
-              <img
-                src="https://www.tryimg.com/u/2019/04/16/unip.png"
-                alt="Logo da faculdade"
-              />
-            </div>
-            <div className="add-scholarship-modal__info">
-              <div>
-                <div className="add-scholarship-modal__name">Administração</div>
-                <div className="add-scholarship-modal__type">Bacharelado</div>
-              </div>
-              <div>
-                <div className="add-scholarship-modal__discount">
-                  Bolsa de{' '}
-                  <span className="add-scholarship-modal__discount-percentage">
-                    50%
-                  </span>
-                </div>
-                <div className="add-scholarship-modal__price">R$ 294/mês</div>
-              </div>
-            </div>
-          </div>
+          <ModalScholarship />
           <hr />
         </div>
         <div className="add-scholarship-modal__content add-scholarship-modal__buttons">

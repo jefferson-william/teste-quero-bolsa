@@ -28,7 +28,7 @@ export const AddScholarshipModal = styled.form`
     margin: 16px 0;
   }
   .add-scholarship-modal__overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -108,39 +108,6 @@ export const AddScholarshipModal = styled.form`
   .add-scholarship-modal__options {
     text-align: right;
   }
-  .add-scholarship-modal__scholarship {
-    align-items: center;
-    display: flex;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    > div:nth-child(2) {
-      padding-left: 32px;
-      padding-right: 32px;
-    }
-  }
-  .add-scholarship-modal__name {
-    margin-bottom: 8px;
-    font-family: 'Proxima Nova Bold';
-    font-size: 18px;
-    color: ${colors.blue.secondary};
-  }
-  .add-scholarship-modal__type {
-    font-size: 14px;
-  }
-  .add-scholarship-modal__discount {
-    margin: 24px 0 8px;
-  }
-  .add-scholarship-modal__discount-percentage,
-  .add-scholarship-modal__price {
-    font-family: 'Proxima Nova Bold';
-    color: ${colors.green.primary};
-  }
-  .add-scholarship-modal__info {
-    flex: 1;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    display: flex;
-  }
   .add-scholarship-modal__buttons {
     justify-content: space-between;
     display: flex;
@@ -170,15 +137,6 @@ export const AddScholarshipModal = styled.form`
       display: flex;
       p {
         margin: 0 0 0 4px;
-      }
-    }
-    .add-scholarship-modal__info {
-      flex-direction: row;
-      > div:first-child {
-        flex: 1;
-      }
-      .add-scholarship-modal__discount {
-        margin-top: 0;
       }
     }
     .add-scholarship-modal__buttons {
