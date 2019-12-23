@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react'
+import { useSelector } from 'react-redux'
 import InputRange from 'react-input-range'
 import Field from '~/components/Field'
 import ModalScholarship from '~/components/ModalScholarship'
@@ -7,6 +8,7 @@ import 'react-input-range/lib/css/index.css'
 
 export default ({ handleToggleModal }) => {
   const [range, UseRange] = useState(10000)
+  const scholarships = useSelector(state => state.Scholarships.data)
 
   const rangeFormated = useMemo(() => {
     return `${range.toLocaleString('pt-BR')},00`
@@ -99,7 +101,12 @@ export default ({ handleToggleModal }) => {
         </div>
         <hr />
         <div className="add-scholarship-modal__scholarships">
-          <ModalScholarship />
+          {scholarships.map(scholarship => (
+            <>
+              <ModalScholarship key={scholarship.id} data={scholarship} />
+              <hr />
+            </>
+          ))}
           <hr />
         </div>
         <div className="add-scholarship-modal__content add-scholarship-modal__buttons">

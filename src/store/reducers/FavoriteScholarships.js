@@ -1,13 +1,13 @@
 export const INITIAL_STATE = {
-  data: [],
+  ids: [],
 }
 
 export default function reducer(state = INITIAL_STATE, action = {}) {
   switch (action.type) {
-    case 'FAVORITE_SCHOLARSHIPS_SET':
+    case 'FAVORITE_SCHOLARSHIPS_SET_IDS':
       return {
         ...state,
-        data: action.payload.data,
+        ids: action.payload.ids,
       }
     default:
       return state

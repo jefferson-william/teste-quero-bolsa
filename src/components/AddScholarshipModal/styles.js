@@ -20,13 +20,6 @@ export const AddScholarshipModal = styled.form`
     font-size: 14px;
     text-transform: uppercase;
   }
-  img {
-    max-width: 192px;
-    height: 48px;
-  }
-  hr {
-    margin: 16px 0;
-  }
   .add-scholarship-modal__overlay {
     position: fixed;
     top: 0;

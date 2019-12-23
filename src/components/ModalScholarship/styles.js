@@ -5,11 +5,15 @@ import colors from '~/styles/colors'
 export const ModalScholarship = styled.div`
   align-items: center;
   display: flex;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding: 32px 0;
+  cursor: pointer;
   > div:nth-child(2) {
     padding-left: 32px;
     padding-right: 32px;
+  }
+  img {
+    max-width: 176px;
+    height: 48px;
   }
   .modal-scholarship__name {
     margin-bottom: 8px;
@@ -39,6 +43,9 @@ export const ModalScholarship = styled.div`
       flex-direction: row;
       > div:first-child {
         flex: 1;
+      }
+      > div + div {
+        text-align: right;
       }
       .modal-scholarship__discount {
         margin-top: 0;
