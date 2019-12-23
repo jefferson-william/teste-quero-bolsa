@@ -1,23 +1,22 @@
-import React, { useEffect } from 'react'
+import React from 'react'
+import shortid from 'shortid'
 import { Field } from './styles'
-
-let fieldCount = 0
 
 export default ({ placeholder, type = 'text' }) => {
   const isDropdown = type === 'dropdown'
   const isReadOnly = isDropdown
   const dropdownClass = isDropdown ? 'field__dropdown' : ''
 
-  useEffect(() => {
-    fieldCount += 1
-  }, [])
-
   return (
     <Field className="field">
-      <label htmlFor={`Field${fieldCount}`}>
+      <label htmlFor={`Field${shortid.generate()}`}>
         {placeholder}
         <div className={`field__input ${dropdownClass}`}>
-          <input type="text" readOnly={isReadOnly} id={`Field${fieldCount}`} />
+          <input
+            type="text"
+            readOnly={isReadOnly}
+            id={`Field${shortid.generate()}`}
+          />
           {isDropdown && (
             <>
               <input className="field__checkbox" type="checkbox" />
