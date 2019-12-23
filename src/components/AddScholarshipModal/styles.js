@@ -5,15 +5,17 @@ import colors from '~/styles/colors'
 export const AddScholarshipModal = styled.form`
   flex-direction: column;
   align-items: center;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   display: flex;
   width: 100%;
   height: 100%;
+  padding-bottom: 64px;
   font-size: 16px;
   text-align: left;
   z-index: 1;
+  overflow-y: auto;
   cursor: default;
   label {
     font-family: 'Proxima Nova Bold';
@@ -33,7 +35,7 @@ export const AddScholarshipModal = styled.form`
     position: relative;
     width: 100%;
     padding: 0 24px;
-    margin-top: 64px;
+    margin: 64px 0 32px;
     background: #fff;
   }
   .add-scholarship-modal__close-action {
@@ -108,9 +110,19 @@ export const AddScholarshipModal = styled.form`
     margin: 32px 0 24px;
   }
   @media (min-width: ${breakpoints.md}) {
+    margin-top: 64px;
+    margin-bottom: 128px;
+    padding-bottom: 128px;
     .add-scholarship-modal__container {
       max-width: 720px;
       padding: 8px 32px;
+    }
+    .add-scholarship-modal__close-action {
+      top: -48px;
+      right: 0;
+    }
+    .add-scholarship-modal__close-icon {
+      font-size: 32px;
     }
     .add-scholarship-modal__fields {
       display: flex;
@@ -134,9 +146,13 @@ export const AddScholarshipModal = styled.form`
     }
     .add-scholarship-modal__buttons {
       justify-content: flex-end;
+      background: #fff;
       button {
         width: auto;
       }
     }
+  }
+  @media (min-width: ${breakpoints.lg}) {
+    margin-top: 128px;
   }
 `

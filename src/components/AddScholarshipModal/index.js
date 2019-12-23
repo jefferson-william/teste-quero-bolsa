@@ -103,11 +103,14 @@ export default ({ handleToggleModal }) => {
         <div className="add-scholarship-modal__scholarships">
           {scholarships.map(scholarship => (
             <>
-              <ModalScholarship key={scholarship.id} data={scholarship} />
+              <ModalScholarship
+                key={scholarship.id}
+                data={scholarship}
+                handleChecked={HandleChecked}
+              />
               <hr />
             </>
           ))}
-          <hr />
         </div>
         <div className="add-scholarship-modal__content add-scholarship-modal__buttons">
           <button type="button" className="button">
