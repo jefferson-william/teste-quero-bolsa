@@ -1,7 +1,7 @@
-import React, { useState, useCallback, useRef } from 'react'
+import React, { useState, useCallback, useRef, useEffect } from 'react'
 import { ModalScholarship } from './styles'
 
-export default ({ data, handleChecked }) => {
+export default ({ data, favorited, handleChecked }) => {
   const input = useRef(null)
   const [checked, UseChecked] = useState(false)
 
@@ -12,6 +12,12 @@ export default ({ data, handleChecked }) => {
 
     handleChecked(!checked, id)
   }, [checked])
+
+  useEffect(() => {
+    if (favorited) {
+      UseChecked(true)
+    }
+  }, [])
 
   return (
     <ModalScholarship

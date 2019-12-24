@@ -1,30 +1,44 @@
-import React, { useState, useRef, useMemo, useCallback } from 'react'
+import React, { useState, useRef, useMemo, useCallback, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import InputRange from 'react-input-range'
-import * as FavoriteScholarshipsAction from '~/store/actions/FavoriteScholarships'
+import { FavoriteScholarshipsAction } from '~/store/actions'
 import ModalScholarship from '~/components/ModalScholarship'
 import { AddScholarshipModal } from './styles'
 import 'react-input-range/lib/css/index.css'
 
 export default ({ handleToggleModal }) => {
   const dispatch = useDispatch()
-  const cityField = useRef(null)
-  const courseField = useRef(null)
-  const [data, UseData] = useState({})
-  const [checkedIds, UseCheckedIds] = useState([])
-  const [range, UseRange] = useState(10000)
-  const [scholarships, cities, courses] = useSelector(state => [
+  const [
+    scholarships,
+    cities,
+    courses,
+    favoritedScholarshipsIds,
+    lowestPricedScholarship,
+    higherPricedScholarship,
+  ] = useSelector(state => [
     state.Scholarships.data,
     state.Scholarships.cities,
     state.Scholarships.courses,
+    state.FavoriteScholarships.ids,
+    state.FavoriteScholarships.lowestPricedScholarship,
+    state.FavoriteScholarships.higherPricedScholarship,
   ])
 
+  const courseKindPresentialField = useRef(null)
+  const courseKindDistanceLearningField = useRef(null)
+  const cityField = useRef(null)
+  const courseField = useRef(null)
+  const [data, UseData] = useState({
+    range: Math.ceil(higherPricedScholarship),
+  })
+  const [checkedIds, UseCheckedIds] = useState([])
+
   const rangeFormated = useMemo(() => {
-    return `${range.toLocaleString('pt-BR', {
+    return `${data.range.toLocaleString('pt-BR', {
       style: 'currency',
       currency: 'BRL',
     })}`
-  }, [range])
+  }, [data.range])
 
   const ToggleModal = useCallback(handleToggleModal, [])
 
@@ -34,16 +48,13 @@ export default ({ handleToggleModal }) => {
     ToggleModal()
   }, [checkedIds])
 
-  const HandleChecked = useCallback(
-    (checked, id) => {
-      UseCheckedIds(prevIds => {
-        return checked
-          ? [...prevIds, id]
-          : [...prevIds.filter(value => value !== id)]
-      })
-    },
-    [checkedIds, range]
-  )
+  const HandleChecked = useCallback((checked, id) => {
+    UseCheckedIds(prevIds => {
+      return checked
+        ? [...prevIds, id]
+        : [...prevIds.filter(value => value !== id)]
+    })
+  }, [])
 
   return (
     <AddScholarshipModal
@@ -122,16 +133,36 @@ export default ({ handleToggleModal }) => {
               <label htmlFor="CheckboxPresential">
                 <input
                   type="checkbox"
+                  name="courseKind"
                   className="checkbox"
                   id="CheckboxPresential"
+                  ref={courseKindPresentialField}
+                  value={data.courseKindPresential}
+                  onChange={() =>
+                    UseData({
+                      ...data,
+                      courseKindPresential:
+                        courseKindPresentialField.current.value,
+                    })
+                  }
                 />
                 <span>Presencial</span>
               </label>
               <label htmlFor="CheckboxDistanceLearning">
                 <input
                   type="checkbox"
+                  name="courseKind"
                   className="checkbox"
                   id="CheckboxDistanceLearning"
+                  ref={courseKindDistanceLearningField}
+                  value={data.courseKindDistanceLearning}
+                  onChange={() =>
+                    UseData({
+                      ...data,
+                      courseKindDistanceLearning:
+                        courseKindDistanceLearningField.current.value,
+                    })
+                  }
                 />
                 <span>A distância</span>
               </label>
@@ -146,11 +177,11 @@ export default ({ handleToggleModal }) => {
             </p>
             <div className="add-scholarship-modal__ranger">
               <InputRange
-                minValue={0}
-                maxValue={10000}
+                minValue={lowestPricedScholarship}
+                maxValue={Math.ceil(higherPricedScholarship)}
                 formatLabel={() => ''}
-                value={range}
-                onChange={value => UseRange(value)}
+                value={data.range}
+                onChange={value => UseData({ ...data, range: value })}
               />
             </div>
           </div>
@@ -177,6 +208,9 @@ export default ({ handleToggleModal }) => {
                   key={scholarship.id}
                   data={scholarship}
                   handleChecked={HandleChecked}
+                  favorited={
+                    favoritedScholarshipsIds.indexOf(scholarship.id) > -1
+                  }
                 />
                 <hr />
               </>

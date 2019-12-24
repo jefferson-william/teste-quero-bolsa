@@ -65,9 +65,29 @@ export default () => {
       .filter(GetFavoritedScholarshipBySemester)
   }, [favoritedScholarshipsIds, scholarships, filterSemester])
 
+  const [lowestPricedScholarship, higherPricedScholarship] = useMemo(() => {
+    if (!data) return []
+
+    const scholarshipsSortedByPrice = data.sort(
+      (a, b) => a.price_with_discount - b.price_with_discount
+    )
+
+    return [
+      scholarshipsSortedByPrice[0].price_with_discount,
+      scholarshipsSortedByPrice[scholarshipsSortedByPrice.length - 1]
+        .price_with_discount,
+    ]
+  }, [data])
+
   useEffect(() => {
     if (!data) return
 
+    dispatch(
+      FavoriteScholarshipsAction.SetLowestAndHigherScholarshipPrice(
+        lowestPricedScholarship,
+        higherPricedScholarship
+      )
+    )
     dispatch(ScholarshipsAction.Set(data))
   }, [data])
 

@@ -138,6 +138,9 @@ export const AddScholarshipModal = styled.form`
         margin-left: 16px;
       }
     }
+    .add-scholarship-modal__fields-mark {
+      margin-top: 16px;
+    }
     .add-scholarship-modal__checkboxes {
       margin-top: 40px;
     }
