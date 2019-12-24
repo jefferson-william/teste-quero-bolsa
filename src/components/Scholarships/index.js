@@ -1,9 +1,9 @@
 import React, { useEffect, useMemo, useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import useAxios from '~/config/axios'
+import { ScholarshipsAction, FavoriteScholarshipsAction } from '~/store/actions'
 import AddScholarship from '~/components/AddScholarship'
 import Scholarship from '~/components/Scholarship'
-import { ScholarshipsAction, FavoriteScholarshipsAction } from '~/store/actions'
 import { Scholarships } from './styles'
 
 export default () => {
