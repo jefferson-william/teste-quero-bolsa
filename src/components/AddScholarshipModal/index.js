@@ -1,10 +1,13 @@
-import React, { useState, useRef, useMemo, useCallback, useEffect } from 'react'
+import React, { useState, useRef, useMemo, useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import InputRange from 'react-input-range'
 import { FavoriteScholarshipsAction } from '~/store/actions'
 import ModalScholarship from '~/components/ModalScholarship'
 import { AddScholarshipModal } from './styles'
 import 'react-input-range/lib/css/index.css'
+
+export const SortByUniversityName = (a, b) =>
+  a.university.name.localeCompare(b.university.name)
 
 export default ({ handleToggleModal }) => {
   const dispatch = useDispatch()
@@ -55,6 +58,12 @@ export default ({ handleToggleModal }) => {
         : [...prevIds.filter(value => value !== id)]
     })
   }, [])
+
+  const sortedAndFilteredScholarships = useMemo(() => {
+    if (!scholarships.length) return []
+
+    return scholarships.sort(SortByUniversityName)
+  }, [scholarships])
 
   return (
     <AddScholarshipModal
@@ -200,21 +209,19 @@ export default ({ handleToggleModal }) => {
         </div>
         <hr />
         <div className="add-scholarship-modal__scholarships">
-          {scholarships
-            .sort((a, b) => a.university.name.localeCompare(b.university.name))
-            .map(scholarship => (
-              <>
-                <ModalScholarship
-                  key={scholarship.id}
-                  data={scholarship}
-                  handleChecked={HandleChecked}
-                  favorited={
-                    favoritedScholarshipsIds.indexOf(scholarship.id) > -1
-                  }
-                />
-                <hr />
-              </>
-            ))}
+          {sortedAndFilteredScholarships.map(scholarship => (
+            <div key={scholarship.id}>
+              <ModalScholarship
+                key={scholarship.id}
+                data={scholarship}
+                handleChecked={HandleChecked}
+                favorited={
+                  favoritedScholarshipsIds.indexOf(scholarship.id) > -1
+                }
+              />
+              <hr />
+            </div>
+          ))}
         </div>
         <div className="add-scholarship-modal__content add-scholarship-modal__buttons">
           <button type="button" className="button" onClick={ToggleModal}>
