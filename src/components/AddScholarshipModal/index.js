@@ -17,6 +17,10 @@ export const FilterByCourseName = ({ courseName }) => scholarship => {
   return !courseName || scholarship.course.name === courseName
 }
 
+export const FilterByRange = ({ range }) => scholarship => {
+  return scholarship.price_with_discount < range
+}
+
 export default ({ handleToggleModal }) => {
   const dispatch = useDispatch()
   const [
@@ -73,6 +77,7 @@ export default ({ handleToggleModal }) => {
     return scholarships
       .filter(FilterByCity(data))
       .filter(FilterByCourseName(data))
+      .filter(FilterByRange(data))
       .sort(SortByUniversityName)
   }, [scholarships, data])
 
