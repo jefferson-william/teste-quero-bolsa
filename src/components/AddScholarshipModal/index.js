@@ -17,6 +17,23 @@ export const FilterByCourseName = ({ courseName }) => scholarship => {
   return !courseName || scholarship.course.name === courseName
 }
 
+export const FilterByCourseKindPresential = ({
+  courseKindPresential,
+}) => scholarship => {
+  return (
+    !courseKindPresential || scholarship.course.kind === courseKindPresential
+  )
+}
+
+export const FilterByCourseKindDistanceLearning = ({
+  courseKindDistanceLearning,
+}) => scholarship => {
+  return (
+    !courseKindDistanceLearning ||
+    scholarship.course.kind === courseKindDistanceLearning
+  )
+}
+
 export const FilterByRange = ({ range }) => scholarship => {
   return scholarship.price_with_discount < range
 }
@@ -71,12 +88,33 @@ export default ({ handleToggleModal }) => {
     })
   }, [])
 
+  const HandleCourseKind = useCallback(() => {
+    const courseKindPresential =
+      courseKindPresentialField.current.checked &&
+      courseKindPresentialField.current.value
+    const courseKindDistanceLearning =
+      courseKindDistanceLearningField.current.checked &&
+      courseKindDistanceLearningField.current.value
+    const allCourseKindChecked =
+      courseKindPresentialField.current.checked &&
+      courseKindDistanceLearningField.current.checked
+
+    UseData({
+      ...data,
+      courseKindPresential: !allCourseKindChecked && courseKindPresential,
+      courseKindDistanceLearning:
+        !allCourseKindChecked && courseKindDistanceLearning,
+    })
+  }, [])
+
   const sortedAndFilteredScholarships = useMemo(() => {
     if (!scholarships.length) return []
 
     return scholarships
       .filter(FilterByCity(data))
       .filter(FilterByCourseName(data))
+      .filter(FilterByCourseKindPresential(data))
+      .filter(FilterByCourseKindDistanceLearning(data))
       .filter(FilterByRange(data))
       .sort(SortByUniversityName)
   }, [scholarships, data])
@@ -166,13 +204,7 @@ export default ({ handleToggleModal }) => {
                   id="CheckboxPresential"
                   ref={courseKindPresentialField}
                   value="Presencial"
-                  onChange={() =>
-                    UseData({
-                      ...data,
-                      courseKindPresential:
-                        courseKindPresentialField.current.value,
-                    })
-                  }
+                  onChange={HandleCourseKind}
                 />
                 <span>Presencial</span>
               </label>
@@ -184,13 +216,7 @@ export default ({ handleToggleModal }) => {
                   id="CheckboxDistanceLearning"
                   ref={courseKindDistanceLearningField}
                   value="EaD"
-                  onChange={() =>
-                    UseData({
-                      ...data,
-                      courseKindDistanceLearning:
-                        courseKindDistanceLearningField.current.value,
-                    })
-                  }
+                  onChange={HandleCourseKind}
                 />
                 <span>A distância</span>
               </label>
