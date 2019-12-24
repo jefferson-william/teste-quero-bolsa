@@ -8,20 +8,17 @@ import { Scholarships } from './styles'
 
 export default () => {
   const dispatch = useDispatch()
-  const scholarships = useSelector(state => state.Scholarships.data)
-  const favoritedScholarshipsIds = useSelector(
-    state => state.FavoriteScholarships.ids
-  )
+  const [
+    scholarships,
+    favoritedScholarshipsIds,
+    filterSemester,
+  ] = useSelector(state => [
+    state.Scholarships.data,
+    state.FavoriteScholarships.ids,
+    state.FavoriteScholarships.filterSemester,
+  ])
 
   const [{ data }] = useAxios('/api/redealumni/scholarships')
-
-  const favoriteScholarships = useMemo(() => {
-    if (!favoritedScholarshipsIds || !scholarships.length) return []
-
-    return scholarships.filter(
-      ({ id }) => favoritedScholarshipsIds.indexOf(id) > -1
-    )
-  }, [favoritedScholarshipsIds, scholarships])
 
   const HandleRemove = useCallback(
     id => {
@@ -31,6 +28,42 @@ export default () => {
     },
     [favoritedScholarshipsIds]
   )
+
+  const GetFavoritedScholarshipByIds = useCallback(
+    ({ id }) => favoritedScholarshipsIds.indexOf(id) > -1,
+    [favoritedScholarshipsIds]
+  )
+
+  const GetFavoritedScholarshipBySemester = useCallback(
+    scholarship => {
+      const semesterEqual = scholarship.enrollment_semester === filterSemester
+
+      return (filterSemester && semesterEqual) || !filterSemester
+    },
+    [filterSemester]
+  )
+
+  const GetSorted = useCallback(
+    (a, b) => a.university.name.localeCompare(b.university.name),
+    []
+  )
+
+  const GetMapped = useCallback(
+    scholarship => (
+      <div key={scholarship.id}>
+        <Scholarship data={scholarship} handleRemove={HandleRemove} />
+      </div>
+    ),
+    []
+  )
+
+  const favoriteScholarships = useMemo(() => {
+    if (!favoritedScholarshipsIds || !scholarships.length) return []
+
+    return scholarships
+      .filter(GetFavoritedScholarshipByIds)
+      .filter(GetFavoritedScholarshipBySemester)
+  }, [favoritedScholarshipsIds, scholarships, filterSemester])
 
   useEffect(() => {
     if (!data) return
@@ -46,13 +79,7 @@ export default () => {
       <div>
         <AddScholarship />
       </div>
-      {favoriteScholarships
-        .sort((a, b) => a.university.name.localeCompare(b.university.name))
-        .map(scholarship => (
-          <div key={scholarship.id}>
-            <Scholarship data={scholarship} handleRemove={HandleRemove} />
-          </div>
-        ))}
+      {favoriteScholarships.sort(GetSorted).map(GetMapped)}
     </Scholarships>
   )
 }

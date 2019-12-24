@@ -12,7 +12,7 @@ export default ({ data }) => {
 
   return (
     <Stars id="Stars" className="stars" aria-label="Stars">
-      {repeat.map((value, i) => (
+      {repeat.map(() => (
         <i key={shortid.generate()} className="fas fa-star" />
       ))}
       {difference.map((value, i) => {
