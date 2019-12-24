@@ -119,6 +119,7 @@ export default createGlobalStyle`
       font-size: 12px;
       content: '\f078';
       z-index: 1;
+      pointer-events: none;
     }
   }
   select.select {

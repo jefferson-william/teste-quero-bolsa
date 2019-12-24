@@ -9,8 +9,12 @@ import 'react-input-range/lib/css/index.css'
 export const SortByUniversityName = (a, b) =>
   a.university.name.localeCompare(b.university.name)
 
-export const FilterByCity = city => scholarship => {
+export const FilterByCity = ({ city }) => scholarship => {
   return !city || scholarship.campus.city === city
+}
+
+export const FilterByCourseName = ({ courseName }) => scholarship => {
+  return !courseName || scholarship.course.name === courseName
 }
 
 export default ({ handleToggleModal }) => {
@@ -34,7 +38,7 @@ export default ({ handleToggleModal }) => {
   const courseKindPresentialField = useRef(null)
   const courseKindDistanceLearningField = useRef(null)
   const cityField = useRef(null)
-  const courseField = useRef(null)
+  const courseNameField = useRef(null)
   const [data, UseData] = useState({
     range: Math.ceil(higherPricedScholarship),
   })
@@ -67,7 +71,8 @@ export default ({ handleToggleModal }) => {
     if (!scholarships.length) return []
 
     return scholarships
-      .filter(FilterByCity(data.city))
+      .filter(FilterByCity(data))
+      .filter(FilterByCourseName(data))
       .sort(SortByUniversityName)
   }, [scholarships, data])
 
@@ -121,13 +126,16 @@ export default ({ handleToggleModal }) => {
               className="add-scholarship-modal__label select">
               Selecione o curso de sua preferência
               <select
-                name="courses"
                 id="Courses"
+                name="courseName"
                 className="input select"
-                ref={courseField}
-                value={data.course}
+                ref={courseNameField}
+                value={data.courseName}
                 onChange={() =>
-                  UseData({ ...data, course: courseField.current.value })
+                  UseData({
+                    ...data,
+                    courseName: courseNameField.current.value,
+                  })
                 }>
                 <option />
                 {courses.map(value => (
@@ -148,11 +156,11 @@ export default ({ handleToggleModal }) => {
               <label htmlFor="CheckboxPresential">
                 <input
                   type="checkbox"
-                  name="courseKind"
+                  name="courseKindPresencial"
                   className="checkbox"
                   id="CheckboxPresential"
                   ref={courseKindPresentialField}
-                  value={data.courseKindPresential}
+                  value="Presencial"
                   onChange={() =>
                     UseData({
                       ...data,
@@ -166,11 +174,11 @@ export default ({ handleToggleModal }) => {
               <label htmlFor="CheckboxDistanceLearning">
                 <input
                   type="checkbox"
-                  name="courseKind"
+                  name="courseKindDistanceLearning"
                   className="checkbox"
                   id="CheckboxDistanceLearning"
                   ref={courseKindDistanceLearningField}
-                  value={data.courseKindDistanceLearning}
+                  value="EaD"
                   onChange={() =>
                     UseData({
                       ...data,
