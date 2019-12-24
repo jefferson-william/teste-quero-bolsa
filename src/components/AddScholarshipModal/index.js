@@ -9,6 +9,10 @@ import 'react-input-range/lib/css/index.css'
 export const SortByUniversityName = (a, b) =>
   a.university.name.localeCompare(b.university.name)
 
+export const FilterByCity = city => scholarship => {
+  return !city || scholarship.campus.city === city
+}
+
 export default ({ handleToggleModal }) => {
   const dispatch = useDispatch()
   const [
@@ -62,8 +66,10 @@ export default ({ handleToggleModal }) => {
   const sortedAndFilteredScholarships = useMemo(() => {
     if (!scholarships.length) return []
 
-    return scholarships.sort(SortByUniversityName)
-  }, [scholarships])
+    return scholarships
+      .filter(FilterByCity(data.city))
+      .sort(SortByUniversityName)
+  }, [scholarships, data])
 
   return (
     <AddScholarshipModal
