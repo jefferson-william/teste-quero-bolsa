@@ -21,6 +21,10 @@ export const AddScholarshipModal = styled.form`
     font-family: 'Proxima Nova Bold';
     font-size: 14px;
     text-transform: uppercase;
+    > * {
+      font-family: 'Proxima Nova';
+      text-transform: none;
+    }
   }
   .add-scholarship-modal__overlay {
     position: fixed;

@@ -89,6 +89,41 @@ export default createGlobalStyle`
       background: ${colors.gray.primary};
     }
   }
+  .input {
+    width: 100%;
+    height: 48px;
+    border-radius: 4px;
+    border: 1px solid ${colors.gray.secondary};
+    padding: 8px 16px;
+    margin-top: 8px;
+    color: ${colors.black};
+    background: #fff;
+    appearance: none;
+    &,
+    &::placeholder {
+      font-family: 'Proxima Nova';
+      font-size: 16px;
+    }
+  }
+  label.select {
+    position: relative;
+    &:before {
+      position: absolute;
+      top: 42px;
+      right: 0;
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      font-family: 'Font Awesome Solid Regular';
+      color: ${colors.black};
+      font-size: 12px;
+      content: '\f078';
+      z-index: 1;
+    }
+  }
+  select.select {
+    padding-right: 32px;
+  }
   .button--submit {
     border: 1px solid ${colors.yellow.secondary};
     color: ${colors.black};

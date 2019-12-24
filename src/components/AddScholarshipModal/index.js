@@ -1,7 +1,6 @@
-import React, { useState, useMemo, useCallback } from 'react'
+import React, { useState, useRef, useMemo, useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import InputRange from 'react-input-range'
-import Field from '~/components/Field'
 import * as FavoriteScholarshipsAction from '~/store/actions/FavoriteScholarships'
 import ModalScholarship from '~/components/ModalScholarship'
 import { AddScholarshipModal } from './styles'
@@ -9,9 +8,16 @@ import 'react-input-range/lib/css/index.css'
 
 export default ({ handleToggleModal }) => {
   const dispatch = useDispatch()
+  const cityField = useRef(null)
+  const courseField = useRef(null)
+  const [data, UseData] = useState({})
   const [checkedIds, UseCheckedIds] = useState([])
   const [range, UseRange] = useState(10000)
-  const scholarships = useSelector(state => state.Scholarships.data)
+  const [scholarships, cities, courses] = useSelector(state => [
+    state.Scholarships.data,
+    state.Scholarships.cities,
+    state.Scholarships.courses,
+  ])
 
   const rangeFormated = useMemo(() => {
     return `${range.toLocaleString('pt-BR', {
@@ -61,13 +67,50 @@ export default ({ handleToggleModal }) => {
         </div>
         <div className="add-scholarship-modal__fields add-scholarship-modal__fields">
           <div className="add-scholarship-modal__field">
-            <Field type="dropdown" placeholder="Selecione sua cidade" />
+            <label
+              htmlFor="Cities"
+              className="add-scholarship-modal__label select">
+              Selecione sua cidade
+              <select
+                name="cities"
+                id="Cities"
+                className="input select"
+                ref={cityField}
+                value={data.city}
+                onChange={() =>
+                  UseData({ ...data, city: cityField.current.value })
+                }>
+                <option />
+                {cities.map(value => (
+                  <option key={value} value={value}>
+                    {value}
+                  </option>
+                ))}
+              </select>
+            </label>
           </div>
           <div className="add-scholarship-modal__field">
-            <Field
-              type="dropdown"
-              placeholder="Selecione o curso de sua preferência"
-            />
+            <label
+              htmlFor="Courses"
+              className="add-scholarship-modal__label select">
+              Selecione o curso de sua preferência
+              <select
+                name="courses"
+                id="Courses"
+                className="input select"
+                ref={courseField}
+                value={data.course}
+                onChange={() =>
+                  UseData({ ...data, course: courseField.current.value })
+                }>
+                <option />
+                {courses.map(value => (
+                  <option key={value} value={value}>
+                    {value}
+                  </option>
+                ))}
+              </select>
+            </label>
           </div>
         </div>
         <div className="add-scholarship-modal__fields add-scholarship-modal__fields-mark">
@@ -99,7 +142,7 @@ export default ({ handleToggleModal }) => {
               Até quanto pode pagar?
             </strong>
             <p className="add-scholarship-modal__range-formated">
-              R$ {rangeFormated}
+              {rangeFormated}
             </p>
             <div className="add-scholarship-modal__ranger">
               <InputRange

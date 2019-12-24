@@ -1,5 +1,7 @@
 export const INITIAL_STATE = {
   data: [],
+  cities: [],
+  courses: [],
 }
 
 export default function reducer(state = INITIAL_STATE, action = {}) {
@@ -17,6 +19,20 @@ export default function reducer(state = INITIAL_STATE, action = {}) {
             ...value,
           }
         }),
+        courses: [
+          ...new Set(
+            action.payload.data.map(value => {
+              return value.course.name
+            })
+          ),
+        ],
+        cities: [
+          ...new Set(
+            action.payload.data.map(value => {
+              return value.campus.city
+            })
+          ),
+        ],
       }
     default:
       return state
