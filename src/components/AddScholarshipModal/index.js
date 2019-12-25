@@ -150,13 +150,15 @@ export default ({ handleToggleModal }) => {
               <select
                 name="cities"
                 id="Cities"
-                className="input select"
+                className={`input select ${
+                  data.city ? '' : 'select--no-selected'
+                }`}
                 ref={cityField}
                 value={data.city}
                 onChange={() =>
                   UseData({ ...data, city: cityField.current.value })
                 }>
-                <option />
+                <option value="">Todas as cidades</option>
                 {cities.map(value => (
                   <option key={value} value={value}>
                     {value}
@@ -173,7 +175,9 @@ export default ({ handleToggleModal }) => {
               <select
                 id="Courses"
                 name="courseName"
-                className="input select"
+                className={`input select ${
+                  data.courseName ? '' : 'select--no-selected'
+                }`}
                 ref={courseNameField}
                 value={data.courseName}
                 onChange={() =>
@@ -182,7 +186,7 @@ export default ({ handleToggleModal }) => {
                     courseName: courseNameField.current.value,
                   })
                 }>
-                <option />
+                <option value="">Todos os cursos</option>
                 {courses.map(value => (
                   <option key={value} value={value}>
                     {value}
@@ -270,6 +274,19 @@ export default ({ handleToggleModal }) => {
             </div>
           ))}
         </div>
+        {!sortedAndFilteredScholarships.length && (
+          <>
+            <div className="add-scholarship-modal__no-scholarships">
+              <p>
+                <strong>
+                  Não foram encontradas bolsas para os filtros selecionados.
+                </strong>
+              </p>
+              <p>Considere remover algum dos filtros.</p>
+            </div>
+            <hr />
+          </>
+        )}
         <div className="add-scholarship-modal__content add-scholarship-modal__buttons">
           <button type="button" className="button" onClick={ToggleModal}>
             Cancelar

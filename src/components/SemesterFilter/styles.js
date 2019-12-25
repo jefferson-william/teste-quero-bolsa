@@ -14,7 +14,7 @@ export const SemesterFilter = styled.div`
   }
   .semester-filter__action {
     display: block;
-    padding: 8px 16px;
+    padding: 12px 16px;
     font-weight: bold;
     text-align: center;
     &:hover,
@@ -33,6 +33,10 @@ export const SemesterFilter = styled.div`
     li + li {
       border-top: 0;
       border-left: 1px solid ${colors.blue.secondary};
+    }
+    .semester-filter__action {
+      padding-top: 8px;
+      padding-bottom: 8px;
     }
   }
 `

@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { breakpoints } from '~/styles/metrics'
 import colors from '~/styles/colors'
 
 export const Scholarship = styled.div`
@@ -9,6 +8,7 @@ export const Scholarship = styled.div`
   display: flex;
   height: 100%;
   padding: 24px;
+  font-size: 13px;
   text-align: center;
   background: #fff;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px 0px,
@@ -19,7 +19,6 @@ export const Scholarship = styled.div`
     margin-bottom: 32px;
   }
   strong {
-    font-size: 14px;
     font-weight: bold;
     text-transform: uppercase;
   }
@@ -48,7 +47,7 @@ export const Scholarship = styled.div`
     align-items: center;
     display: flex;
     height: 44px;
-    font-size: 18px;
+    font-size: 16px;
   }
   .scholarship__score {
     margin-right: 8px;
@@ -61,16 +60,13 @@ export const Scholarship = styled.div`
     display: inline-block;
     margin: 8px 4px 0 0;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 19px;
     color: ${colors.green.primary};
   }
   .scholarship__buttons {
     justify-content: space-between;
     display: flex;
     width: 100%;
-    margin-top: 32px;
-  }
-  .scholarship__discount-price {
-    font-size: 18px;
+    margin-top: 16px;
   }
 `

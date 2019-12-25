@@ -27,7 +27,7 @@ export const AddScholarship = styled.div`
     }
   }
   @media (min-width: ${breakpoints.md}) {
-    min-height: 464px;
+    min-height: 485px;
     .add-scholarship__title {
       margin-top: 32px;
     }

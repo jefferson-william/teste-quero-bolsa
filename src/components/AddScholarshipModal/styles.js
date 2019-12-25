@@ -68,7 +68,7 @@ export const AddScholarshipModal = styled.form`
     }
     label {
       margin-right: 32px;
-      font-family: 'Proxima Nova';
+      font-weight: normal;
       font-size: 14px;
       text-transform: none;
     }
@@ -106,6 +106,13 @@ export const AddScholarshipModal = styled.form`
   }
   .add-scholarship-modal__options {
     text-align: right;
+  }
+  .add-scholarship-modal__no-scholarships {
+    padding: 16px 0;
+    text-align: center;
+    p + p {
+      margin-top: 16px;
+    }
   }
   .add-scholarship-modal__buttons {
     justify-content: space-between;

@@ -12,7 +12,7 @@ export default {
   },
   gray: {
     primary: '#ECEEED',
-    secondary: '#CCC',
+    secondary: '#AAA',
   },
   black: '#1F2D30',
   background: '#FBFBFB',

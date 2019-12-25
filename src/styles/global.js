@@ -131,6 +131,9 @@ export default createGlobalStyle`
   }
   select.select {
     padding-right: 32px;
+    &.select--no-selected {
+      color: ${colors.gray.secondary};
+    }
   }
   .fal {
     font-family: 'Font Awesome Light Regular';
