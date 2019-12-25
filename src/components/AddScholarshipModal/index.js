@@ -38,6 +38,10 @@ export const FilterByRange = range => scholarship => {
   return scholarship.price_with_discount < range
 }
 
+export const FilterNoDisplaySelected = checkedIds => scholarship => {
+  return checkedIds.indexOf(scholarship.id) < 0
+}
+
 export default ({ handleToggleModal }) => {
   const dispatch = useDispatch()
   const [
@@ -116,10 +120,11 @@ export default ({ handleToggleModal }) => {
       .filter(FilterByCourseKindPresential(data))
       .filter(FilterByCourseKindDistanceLearning(data))
       .filter(FilterByRange(range))
+      .filter(FilterNoDisplaySelected(favoritedScholarshipsIds))
       .sort(SortByUniversityName)
 
     return filtered
-  }, [scholarships, data, range])
+  }, [scholarships, data, range, favoritedScholarshipsIds])
 
   return (
     <AddScholarshipModal
