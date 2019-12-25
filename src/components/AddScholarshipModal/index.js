@@ -34,7 +34,7 @@ export const FilterByCourseKindDistanceLearning = ({
   )
 }
 
-export const FilterByRange = ({ range }) => scholarship => {
+export const FilterByRange = range => scholarship => {
   return scholarship.price_with_discount < range
 }
 
@@ -60,17 +60,16 @@ export default ({ handleToggleModal }) => {
   const courseKindDistanceLearningField = useRef(null)
   const cityField = useRef(null)
   const courseNameField = useRef(null)
-  const [data, UseData] = useState({
-    range: Math.ceil(higherPricedScholarship),
-  })
+  const [data, UseData] = useState({})
+  const [range, UseRange] = useState(Math.ceil(higherPricedScholarship))
   const [checkedIds, UseCheckedIds] = useState([])
 
   const rangeFormated = useMemo(() => {
-    return `${data.range.toLocaleString('pt-BR', {
+    return `${range.toLocaleString('pt-BR', {
       style: 'currency',
       currency: 'BRL',
     })}`
-  }, [data.range])
+  }, [range])
 
   const ToggleModal = useCallback(handleToggleModal, [])
 
@@ -115,9 +114,9 @@ export default ({ handleToggleModal }) => {
       .filter(FilterByCourseName(data))
       .filter(FilterByCourseKindPresential(data))
       .filter(FilterByCourseKindDistanceLearning(data))
-      .filter(FilterByRange(data))
+      .filter(FilterByRange(range))
       .sort(SortByUniversityName)
-  }, [scholarships, data])
+  }, [scholarships, data, range])
 
   return (
     <AddScholarshipModal
@@ -234,8 +233,8 @@ export default ({ handleToggleModal }) => {
                 minValue={lowestPricedScholarship}
                 maxValue={Math.ceil(higherPricedScholarship)}
                 formatLabel={() => ''}
-                value={data.range}
-                onChange={value => UseData({ ...data, range: value })}
+                value={range}
+                onChange={value => UseRange(value)}
               />
             </div>
           </div>
