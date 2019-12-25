@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "https://jefferson-william.github.io/teste-quero-bolsa/static/css/main.e355dd93.chunk.css",
-    "main.js": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/main.161b36ad.chunk.js",
-    "main.js.map": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/main.161b36ad.chunk.js.map",
+    "main.js": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/main.eeb583e6.chunk.js",
+    "main.js.map": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/main.eeb583e6.chunk.js.map",
     "runtime-main.js": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/runtime-main.ee9eab42.js",
     "runtime-main.js.map": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/runtime-main.ee9eab42.js.map",
     "static/css/2.6d7d54d2.chunk.css": "https://jefferson-william.github.io/teste-quero-bolsa/static/css/2.6d7d54d2.chunk.css",
     "static/js/2.70e84dde.chunk.js": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/2.70e84dde.chunk.js",
     "static/js/2.70e84dde.chunk.js.map": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/2.70e84dde.chunk.js.map",
     "index.html": "https://jefferson-william.github.io/teste-quero-bolsa/index.html",
-    "precache-manifest.a25d3086d0563b8fa91b299ad8ef60c8.js": "https://jefferson-william.github.io/teste-quero-bolsa/precache-manifest.a25d3086d0563b8fa91b299ad8ef60c8.js",
+    "precache-manifest.e4ad5f899339751153e40fdfe4386688.js": "https://jefferson-william.github.io/teste-quero-bolsa/precache-manifest.e4ad5f899339751153e40fdfe4386688.js",
     "service-worker.js": "https://jefferson-william.github.io/teste-quero-bolsa/service-worker.js",
     "static/css/2.6d7d54d2.chunk.css.map": "https://jefferson-william.github.io/teste-quero-bolsa/static/css/2.6d7d54d2.chunk.css.map",
     "static/css/main.e355dd93.chunk.css.map": "https://jefferson-william.github.io/teste-quero-bolsa/static/css/main.e355dd93.chunk.css.map",
@@ -40,6 +40,6 @@
     "static/css/2.6d7d54d2.chunk.css",
     "static/js/2.70e84dde.chunk.js",
     "static/css/main.e355dd93.chunk.css",
-    "static/js/main.161b36ad.chunk.js"
+    "static/js/main.eeb583e6.chunk.js"
   ]
 }
