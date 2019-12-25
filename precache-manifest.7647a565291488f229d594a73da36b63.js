@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c93ca47edddcac9d5edb8bb18cc11fac",
+    "revision": "e234aa49a9864f84a47ff8ed3fdf86fc",
     "url": "https://jefferson-william.github.io/teste-quero-bolsa/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://jefferson-william.github.io/teste-quero-bolsa/static/css/2.6d7d54d2.chunk.css"
   },
   {
-    "revision": "5aeae76c48e76611918f",
+    "revision": "54792969cb8db66ea80e",
     "url": "https://jefferson-william.github.io/teste-quero-bolsa/static/css/main.e355dd93.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/2.70e84dde.chunk.js.LICENSE"
   },
   {
-    "revision": "5aeae76c48e76611918f",
-    "url": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/main.9fc758fe.chunk.js"
+    "revision": "54792969cb8db66ea80e",
+    "url": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/main.7fc11431.chunk.js"
   },
   {
     "revision": "5886a408dc1e67c3e3ef",
