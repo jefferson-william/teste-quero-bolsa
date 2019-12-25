@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "https://jefferson-william.github.io/teste-quero-bolsa/precache-manifest.ec559f462599e24a29c6490f4022daed.js"
+  "https://jefferson-william.github.io/teste-quero-bolsa/precache-manifest.129ff404af73b0b17c6ee09f6dd919e5.js"
 );
 
 self.addEventListener('message', (event) => {

@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "41bbd27b49901a902164a21a194c28aa",
+    "revision": "18a08a32a96cf39b3ab5a5e19fad0031",
     "url": "https://jefferson-william.github.io/teste-quero-bolsa/index.html"
   },
   {
