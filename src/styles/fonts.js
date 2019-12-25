@@ -9,23 +9,40 @@ import FontAwesomeBrandsRegularEot from '~/assets/fonts/FontAwesomeBrands-Regula
 import FontAwesomeBrandsRegularTtf from '~/assets/fonts/FontAwesomeBrands-Regular.ttf'
 import FontAwesomeBrandsRegularSvg from '~/assets/fonts/FontAwesomeBrands-Regular.svg'
 import FontAwesomeBrandsRegularWoff from '~/assets/fonts/FontAwesomeBrands-Regular.woff'
-import FontAwesomeSolidRegularEot from '~/assets/fonts/FontAwesomeSolid-Bold.eot'
-import FontAwesomeSolidRegularTtf from '~/assets/fonts/FontAwesomeSolid-Bold.ttf'
-import FontAwesomeSolidRegularSvg from '~/assets/fonts/FontAwesomeSolid-Bold.svg'
-import FontAwesomeSolidRegularWoff from '~/assets/fonts/FontAwesomeSolid-Bold.woff'
-import FontAwesomeSolidRegularWoff2 from '~/assets/fonts/FontAwesomeSolid-Bold.woff2'
+import FontAwesomeSolidBoldEot from '~/assets/fonts/FontAwesomeSolid-Bold.eot'
+import FontAwesomeSolidBoldTtf from '~/assets/fonts/FontAwesomeSolid-Bold.ttf'
+import FontAwesomeSolidBoldSvg from '~/assets/fonts/FontAwesomeSolid-Bold.svg'
+import FontAwesomeSolidBoldWoff from '~/assets/fonts/FontAwesomeSolid-Bold.woff'
+import FontAwesomeSolidBoldWoff2 from '~/assets/fonts/FontAwesomeSolid-Bold.woff2'
+import FontAwesomeLightRegularEot from '~/assets/fonts/FontAwesomeLight-Regular.eot'
+import FontAwesomeLightRegularTtf from '~/assets/fonts/FontAwesomeLight-Regular.ttf'
+import FontAwesomeLightRegularSvg from '~/assets/fonts/FontAwesomeLight-Regular.svg'
+import FontAwesomeLightRegularWoff from '~/assets/fonts/FontAwesomeLight-Regular.woff'
+import FontAwesomeLightRegularWoff2 from '~/assets/fonts/FontAwesomeLight-Regular.woff2'
 import '~/styles/font-awesome-brands.css'
 
 export default createGlobalStyle`
   @font-face {
+    font-family: 'Font Awesome Light Regular';
+    src: url(${FontAwesomeLightRegularEot});
+    src: local('Font Awesome Solid Regular'), local('FontAwesomeLightRegular-Regular'),
+      url(${FontAwesomeLightRegularEot}) format('embedded-opentype'),
+      url(${FontAwesomeLightRegularWoff}) format('woff'),
+      url(${FontAwesomeLightRegularWoff2}) format('woff2'),
+      url(${FontAwesomeLightRegularSvg}) format('svg'),
+      url(${FontAwesomeLightRegularTtf}) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
     font-family: 'Font Awesome Solid Regular';
-    src: url(${FontAwesomeSolidRegularEot});
-    src: local('Font Awesome Solid Regular'), local('FontAwesomeSolidRegular-Regular'),
-      url(${FontAwesomeSolidRegularEot}) format('embedded-opentype'),
-      url(${FontAwesomeSolidRegularWoff}) format('woff'),
-      url(${FontAwesomeSolidRegularWoff2}) format('woff2'),
-      url(${FontAwesomeSolidRegularSvg}) format('svg'),
-      url(${FontAwesomeSolidRegularTtf}) format('truetype');
+    src: url(${FontAwesomeSolidBoldEot});
+    src: local('Font Awesome Solid Regular'), local('FontAwesomeSolidBold-Regular'),
+      url(${FontAwesomeSolidBoldEot}) format('embedded-opentype'),
+      url(${FontAwesomeSolidBoldWoff}) format('woff'),
+      url(${FontAwesomeSolidBoldWoff2}) format('woff2'),
+      url(${FontAwesomeSolidBoldSvg}) format('svg'),
+      url(${FontAwesomeSolidBoldTtf}) format('truetype');
     font-weight: normal;
     font-style: normal;
   }
