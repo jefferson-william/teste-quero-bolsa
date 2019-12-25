@@ -1,7 +1,8 @@
 {
   "name": "quero",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.1",
+  "private": false,
+  "homepage": "https://jefferson-william.github.io/teste-quero-bolsa/",
   "dependencies": {
     "@testing-library/jest-dom": "4.2.4",
     "@testing-library/react": "9.4.0",
@@ -21,6 +22,7 @@
     "styled-components": "4.4.1"
   },
   "scripts": {
+    "deploy": "yarn build ; ./node_modules/.bin/gh-pages -d build",
     "serve": "serve -s build",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
@@ -57,6 +59,7 @@
     "eslint-plugin-prettier": "3.1.2",
     "eslint-plugin-react": "7.17.0",
     "eslint-plugin-react-hooks": "2.3.0",
+    "gh-pages": "2.1.1",
     "prettier": "1.19.1",
     "react-app-rewired": "2.1.5"
   }
