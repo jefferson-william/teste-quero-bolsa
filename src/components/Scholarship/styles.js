@@ -24,7 +24,7 @@ export const Scholarship = styled.div`
     text-transform: uppercase;
   }
   a {
-    font-family: 'Proxima Nova Bold';
+    font-weight: bold;
   }
   hr {
     margin: 8px 0;
@@ -45,6 +45,9 @@ export const Scholarship = styled.div`
     margin-bottom: 16px;
   }
   .scholarship__title {
+    align-items: center;
+    display: flex;
+    height: 44px;
     font-size: 18px;
   }
   .scholarship__score {
@@ -57,7 +60,7 @@ export const Scholarship = styled.div`
   .scholarship__discount-price {
     display: inline-block;
     margin: 8px 4px 0 0;
-    font-family: 'Proxima Nova Bold';
+    font-weight: bold;
     font-size: 16px;
     color: ${colors.green.primary};
   }
@@ -69,10 +72,5 @@ export const Scholarship = styled.div`
   }
   .scholarship__discount-price {
     font-size: 18px;
-  }
-  @media (min-width: ${breakpoints.md}) {
-    button {
-      padding: 8px 0;
-    }
   }
 `

@@ -4,7 +4,7 @@ import { breakpoints } from '~/styles/metrics'
 export const Breadcrumb = styled.div`
   margin: 32px 0;
   a {
-    font-family: 'Proxima Nova Bold';
+    font-weight: bold;
   }
   ul {
     list-style-type: none;

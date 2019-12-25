@@ -18,7 +18,6 @@ export const AddScholarshipModal = styled.form`
   overflow-y: auto;
   cursor: default;
   label {
-    font-family: 'Proxima Nova Bold';
     font-size: 14px;
     text-transform: uppercase;
     > * {
@@ -60,7 +59,7 @@ export const AddScholarshipModal = styled.form`
   }
   .add-scholarship-modal__title {
     margin-bottom: 8px;
-    font-family: 'Proxima Nova Bold';
+    font-weight: bold;
     font-size: 24px;
   }
   .add-scholarship-modal__fields-mark {
@@ -84,7 +83,8 @@ export const AddScholarshipModal = styled.form`
     margin: 8px 0;
   }
   .add-scholarship-modal__label {
-    font-size: 14px;
+    font-weight: bold;
+    font-size: 13px;
     text-transform: uppercase;
   }
   .add-scholarship-modal__ranger {
@@ -100,7 +100,7 @@ export const AddScholarshipModal = styled.form`
     }
     p {
       margin-top: 8px;
-      font-family: 'Proxima Nova Bold';
+      font-weight: bold;
       color: ${colors.blue.secondary};
     }
   }
@@ -114,7 +114,7 @@ export const AddScholarshipModal = styled.form`
     margin: 32px 0 24px;
   }
   @media (min-width: ${breakpoints.md}) {
-    margin-top: 64px;
+    margin-top: 16px;
     margin-bottom: 128px;
     padding-bottom: 128px;
     .add-scholarship-modal__container {
@@ -143,6 +143,9 @@ export const AddScholarshipModal = styled.form`
     }
     .add-scholarship-modal__checkboxes {
       margin-top: 40px;
+      label {
+        font-weight: normal;
+      }
     }
     .add-scholarship-modal__options {
       align-items: center;
@@ -156,10 +159,12 @@ export const AddScholarshipModal = styled.form`
       background: #fff;
       button {
         width: auto;
+        height: 48px;
+        font-size: 14px;
+        line-height: 48px;
       }
     }
   }
   @media (min-width: ${breakpoints.lg}) {
-    margin-top: 64px;
   }
 `

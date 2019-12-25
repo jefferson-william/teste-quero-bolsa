@@ -5,7 +5,7 @@ import colors from '~/styles/colors'
 export const ModalScholarship = styled.div`
   align-items: center;
   display: flex;
-  padding: 32px 0;
+  padding: 24px 0;
   cursor: pointer;
   > div:nth-child(2) {
     padding-left: 32px;
@@ -17,19 +17,19 @@ export const ModalScholarship = styled.div`
   }
   .modal-scholarship__name {
     margin-bottom: 8px;
-    font-family: 'Proxima Nova Bold';
-    font-size: 18px;
+    font-weight: bold;
+    font-size: 16px;
     color: ${colors.blue.secondary};
   }
   .modal-scholarship__type {
-    font-size: 14px;
+    font-size: 13px;
   }
   .modal-scholarship__discount {
     margin: 24px 0 8px;
   }
   .modal-scholarship__discount-percentage,
   .modal-scholarship__price {
-    font-family: 'Proxima Nova Bold';
+    font-weight: bold;
     color: ${colors.green.primary};
   }
   .modal-scholarship__info {

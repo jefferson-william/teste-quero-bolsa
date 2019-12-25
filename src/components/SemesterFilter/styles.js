@@ -15,7 +15,7 @@ export const SemesterFilter = styled.div`
   .semester-filter__action {
     display: block;
     padding: 8px 16px;
-    font-family: 'Proxima Nova Bold';
+    font-weight: bold;
     text-align: center;
     &:hover,
     &:active,

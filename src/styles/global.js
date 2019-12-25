@@ -49,8 +49,8 @@ export default createGlobalStyle`
     height: auto;
     object-fit: contain;
   }
-  b, strong, button {
-    font-family: 'Proxima Nova Bold';
+  b, strong, button, label {
+    font-weight: bold;
   }
   input.checkbox {
     position: relative;
@@ -74,9 +74,11 @@ export default createGlobalStyle`
   }
   .button {
     width: 100%;
+    height: 48px;
     border-radius: 4px;
     border: 1px solid ${colors.blue.secondary};
-    padding: 16px;
+    padding: 0 16px;
+    line-height: 48px;
     font-size: 16px;
     color: ${colors.blue.secondary};
     background: #fff;
@@ -88,6 +90,11 @@ export default createGlobalStyle`
       color: ${colors.gray.secondary};
       background: ${colors.gray.primary};
     }
+  }
+  .button--submit {
+    border: 1px solid ${colors.yellow.secondary};
+    color: ${colors.black};
+    background: ${colors.yellow.primary};
   }
   .input {
     width: 100%;
@@ -125,13 +132,8 @@ export default createGlobalStyle`
   select.select {
     padding-right: 32px;
   }
-  .button--submit {
-    border: 1px solid ${colors.yellow.secondary};
-    color: ${colors.black};
-    background: ${colors.yellow.primary};
-  }
   .fal {
-    font-family: 'Font Awesome 5 Pro';
+    font-family: 'Font Awesome Light Regular';
     font-size: 24px;
   }
   .fab {
@@ -166,6 +168,12 @@ export default createGlobalStyle`
   @media (min-width: ${breakpoints.md}) {
     .container {
       max-width: 750px;
+    }
+    .button {
+      height: 32px;
+      line-height: 32px;
+      padding: 0 16px;
+      font-size: 13px;
     }
   }
   @media (min-width: ${breakpoints.lg}) {

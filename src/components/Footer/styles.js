@@ -8,7 +8,7 @@ export const Footer = styled.footer`
   align-items: center;
   display: flex;
   margin-top: 32px;
-  font-family: 'Proxima Nova Bold';
+  font-weight: bold;
   &,
   i {
     color: #fff;
@@ -38,6 +38,7 @@ export const Footer = styled.footer`
     align-items: center;
     display: flex;
     i {
+      font-size: 32px;
       margin-bottom: 8px;
     }
   }
@@ -79,7 +80,6 @@ export const Footer = styled.footer`
       padding: 0 16px;
       span {
         display: inline-block;
-        margin-top: 8px;
       }
       > div {
         flex: 1;
@@ -90,8 +90,9 @@ export const Footer = styled.footer`
         display: block;
       }
       i {
-        margin: 8px 16px 0 0;
+        margin: 0 16px 0 0;
         float: left;
+        line-height: 40px;
       }
     }
     .footer__whatsapp,
@@ -118,6 +119,9 @@ export const Footer = styled.footer`
     }
     p.footer__text__desktop {
       display: block;
+    }
+    .footer__text__desktop {
+      line-height: 20px;
     }
   }
   @media (min-width: ${breakpoints.lg}) {

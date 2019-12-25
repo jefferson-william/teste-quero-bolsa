@@ -58,7 +58,7 @@ export default createGlobalStyle`
     font-style: normal;
   }
   @font-face {
-    font-family: 'Proxima Nova Bold';
+    font-weight: bold;
     src: url(${ProximaNovaBoldEot});
     src: local('Proxima Nova Bold'), local('ProximaNova-Bold'),
       url(${ProximaNovaBoldEot}) format('embedded-opentype'),

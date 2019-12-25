@@ -7,7 +7,7 @@ export const Navigation = styled.nav`
   a {
     display: inline-block;
     padding: 12px 0;
-    font-family: 'Proxima Nova Bold';
+    font-weight: bold;
     font-size: 16px;
     color: #fff;
   }
@@ -20,9 +20,6 @@ export const Navigation = styled.nav`
     position: absolute;
     top: 0;
     left: 16px;
-    &:hover {
-      color: ${colors.black};
-    }
   }
   @media (min-width: ${breakpoints.md}) {
     a {

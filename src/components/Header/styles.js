@@ -6,7 +6,7 @@ export const Header = styled.header`
   background-color: #fff;
   color: ${colors.blue.secondary};
   span {
-    font-family: 'Proxima Nova Bold';
+    font-weight: bold;
   }
   .header__container {
     justify-content: center;

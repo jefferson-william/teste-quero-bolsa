@@ -30,7 +30,9 @@ export default () => {
           <div>
             <i className="fal fa-user-circle" />
             <span className="header__account__text">Conta</span>
-            <span className="header__account__name">Nome Sobrenome</span>
+            <span className="header__account__name">
+              Jefferson William Machado
+            </span>
           </div>
         </div>
       </div>
