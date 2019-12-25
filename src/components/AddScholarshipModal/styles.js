@@ -160,6 +160,6 @@ export const AddScholarshipModal = styled.form`
     }
   }
   @media (min-width: ${breakpoints.lg}) {
-    margin-top: 128px;
+    margin-top: 64px;
   }
 `

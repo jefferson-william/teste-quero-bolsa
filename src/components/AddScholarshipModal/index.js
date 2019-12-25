@@ -1,4 +1,4 @@
-import React, { useState, useRef, useMemo, useCallback } from 'react'
+import React, { useEffect, useState, useRef, useMemo, useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import InputRange from 'react-input-range'
 import { FavoriteScholarshipsAction } from '~/store/actions'
@@ -109,13 +109,15 @@ export default ({ handleToggleModal }) => {
   const sortedAndFilteredScholarships = useMemo(() => {
     if (!scholarships.length) return []
 
-    return scholarships
+    const filtered = scholarships
       .filter(FilterByCity(data))
       .filter(FilterByCourseName(data))
       .filter(FilterByCourseKindPresential(data))
       .filter(FilterByCourseKindDistanceLearning(data))
       .filter(FilterByRange(range))
       .sort(SortByUniversityName)
+
+    return filtered
   }, [scholarships, data, range])
 
   return (
@@ -274,6 +276,7 @@ export default ({ handleToggleModal }) => {
           <button
             type="button"
             className="button button--submit"
+            disabled={!checkedIds.length && !favoritedScholarshipsIds.length}
             onClick={HandleSubmit}>
             Adicionar bolsa(s)
           </button>
