@@ -100,11 +100,12 @@ export default ({ handleToggleModal }) => {
 
     UseData({
       ...data,
-      courseKindPresential: !allCourseKindChecked && courseKindPresential,
-      courseKindDistanceLearning:
-        !allCourseKindChecked && courseKindDistanceLearning,
+      courseKindPresential: allCourseKindChecked ? '' : courseKindPresential,
+      courseKindDistanceLearning: allCourseKindChecked
+        ? ''
+        : courseKindDistanceLearning,
     })
-  }, [])
+  }, [data])
 
   const sortedAndFilteredScholarships = useMemo(() => {
     if (!scholarships.length) return []
