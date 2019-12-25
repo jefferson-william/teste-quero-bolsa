@@ -23,6 +23,11 @@ export default function reducer(state = INITIAL_STATE, action = {}) {
         lowestPricedScholarship: action.payload.lowestPricedScholarship,
         higherPricedScholarship: action.payload.higherPricedScholarship,
       }
+    case 'FAVORITE_SCHOLARSHIPS_REMOVE_BY_ID':
+      return {
+        ...state,
+        ids: state.ids.filter(id => id !== action.payload.id),
+      }
     default:
       return state
   }

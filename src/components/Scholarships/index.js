@@ -20,15 +20,6 @@ export default () => {
 
   const [{ data }] = useAxios('/api/redealumni/scholarships')
 
-  const HandleRemove = useCallback(
-    id => {
-      const ids = favoritedScholarshipsIds.filter(value => value !== id)
-
-      dispatch(FavoriteScholarshipsAction.SetIds(ids))
-    },
-    [favoritedScholarshipsIds]
-  )
-
   const GetFavoritedScholarshipByIds = useCallback(
     ({ id }) => favoritedScholarshipsIds.indexOf(id) > -1,
     [favoritedScholarshipsIds]
@@ -48,6 +39,11 @@ export default () => {
     []
   )
 
+  const HandleRemove = useCallback(
+    id => dispatch(FavoriteScholarshipsAction.RemoveById(id)),
+    [favoritedScholarshipsIds]
+  )
+
   const GetMapped = useCallback(
     scholarship => (
       <div key={scholarship.id}>
@@ -58,7 +54,7 @@ export default () => {
   )
 
   const favoriteScholarships = useMemo(() => {
-    if (!favoritedScholarshipsIds || !scholarships.length) return []
+    if (!favoritedScholarshipsIds.length || !scholarships.length) return []
 
     return scholarships
       .filter(GetFavoritedScholarshipByIds)
