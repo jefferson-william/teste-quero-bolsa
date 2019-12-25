@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "18a08a32a96cf39b3ab5a5e19fad0031",
+    "revision": "91abf78fc1b755e85e3eee3fbf8ea700",
     "url": "https://jefferson-william.github.io/teste-quero-bolsa/index.html"
   },
   {
-    "revision": "d21dc3ad9b17145a1738",
+    "revision": "100d56b8e37c965d5bb9",
     "url": "https://jefferson-william.github.io/teste-quero-bolsa/static/css/2.6d7d54d2.chunk.css"
   },
   {
-    "revision": "5b38880441e28d950bea",
+    "revision": "e8b7087e56c3a011a4cd",
     "url": "https://jefferson-william.github.io/teste-quero-bolsa/static/css/main.e355dd93.chunk.css"
   },
   {
-    "revision": "d21dc3ad9b17145a1738",
-    "url": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/2.fd5ff0c9.chunk.js"
+    "revision": "100d56b8e37c965d5bb9",
+    "url": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/2.70e84dde.chunk.js"
   },
   {
     "revision": "7eb906b2d8ef627da08d7f4a543e6732",
-    "url": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/2.fd5ff0c9.chunk.js.LICENSE"
+    "url": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/2.70e84dde.chunk.js.LICENSE"
   },
   {
-    "revision": "5b38880441e28d950bea",
-    "url": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/main.b8c17970.chunk.js"
+    "revision": "e8b7087e56c3a011a4cd",
+    "url": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/main.8eda12b7.chunk.js"
   },
   {
     "revision": "5886a408dc1e67c3e3ef",
@@ -42,6 +42,26 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f861428959facd1e5e7e703ac1504a23",
     "url": "https://jefferson-william.github.io/teste-quero-bolsa/static/media/FontAwesomeBrands-Regular.f8614289.ttf"
+  },
+  {
+    "revision": "14126655f43628074be1976d86f13eae",
+    "url": "https://jefferson-william.github.io/teste-quero-bolsa/static/media/FontAwesomeLight-Regular.14126655.ttf"
+  },
+  {
+    "revision": "58494050311aaf6b26abf5632fa50faf",
+    "url": "https://jefferson-william.github.io/teste-quero-bolsa/static/media/FontAwesomeLight-Regular.58494050.woff2"
+  },
+  {
+    "revision": "a6152eac26417edfcfd12e85d63cc020",
+    "url": "https://jefferson-william.github.io/teste-quero-bolsa/static/media/FontAwesomeLight-Regular.a6152eac.svg"
+  },
+  {
+    "revision": "c6c2df75cd18414109391e6510f3dead",
+    "url": "https://jefferson-william.github.io/teste-quero-bolsa/static/media/FontAwesomeLight-Regular.c6c2df75.woff"
+  },
+  {
+    "revision": "dcf09260c03a7674f91a767bd2597605",
+    "url": "https://jefferson-william.github.io/teste-quero-bolsa/static/media/FontAwesomeLight-Regular.dcf09260.eot"
   },
   {
     "revision": "2aa6edf8f296a43b32df35f330b7c81c",

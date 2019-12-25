@@ -1,23 +1,28 @@
 {
   "files": {
     "main.css": "https://jefferson-william.github.io/teste-quero-bolsa/static/css/main.e355dd93.chunk.css",
-    "main.js": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/main.b8c17970.chunk.js",
-    "main.js.map": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/main.b8c17970.chunk.js.map",
+    "main.js": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/main.8eda12b7.chunk.js",
+    "main.js.map": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/main.8eda12b7.chunk.js.map",
     "runtime-main.js": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/runtime-main.ee9eab42.js",
     "runtime-main.js.map": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/runtime-main.ee9eab42.js.map",
     "static/css/2.6d7d54d2.chunk.css": "https://jefferson-william.github.io/teste-quero-bolsa/static/css/2.6d7d54d2.chunk.css",
-    "static/js/2.fd5ff0c9.chunk.js": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/2.fd5ff0c9.chunk.js",
-    "static/js/2.fd5ff0c9.chunk.js.map": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/2.fd5ff0c9.chunk.js.map",
+    "static/js/2.70e84dde.chunk.js": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/2.70e84dde.chunk.js",
+    "static/js/2.70e84dde.chunk.js.map": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/2.70e84dde.chunk.js.map",
     "index.html": "https://jefferson-william.github.io/teste-quero-bolsa/index.html",
-    "precache-manifest.129ff404af73b0b17c6ee09f6dd919e5.js": "https://jefferson-william.github.io/teste-quero-bolsa/precache-manifest.129ff404af73b0b17c6ee09f6dd919e5.js",
+    "precache-manifest.564a255022e8f4531b6b61ded8f60bbb.js": "https://jefferson-william.github.io/teste-quero-bolsa/precache-manifest.564a255022e8f4531b6b61ded8f60bbb.js",
     "service-worker.js": "https://jefferson-william.github.io/teste-quero-bolsa/service-worker.js",
     "static/css/2.6d7d54d2.chunk.css.map": "https://jefferson-william.github.io/teste-quero-bolsa/static/css/2.6d7d54d2.chunk.css.map",
     "static/css/main.e355dd93.chunk.css.map": "https://jefferson-william.github.io/teste-quero-bolsa/static/css/main.e355dd93.chunk.css.map",
-    "static/js/2.fd5ff0c9.chunk.js.LICENSE": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/2.fd5ff0c9.chunk.js.LICENSE",
+    "static/js/2.70e84dde.chunk.js.LICENSE": "https://jefferson-william.github.io/teste-quero-bolsa/static/js/2.70e84dde.chunk.js.LICENSE",
     "static/media/FontAwesomeBrands-Regular.woff": "https://jefferson-william.github.io/teste-quero-bolsa/static/media/FontAwesomeBrands-Regular.236cb35e.woff",
     "static/media/FontAwesomeBrands-Regular.eot": "https://jefferson-william.github.io/teste-quero-bolsa/static/media/FontAwesomeBrands-Regular.7b6e8aa2.eot",
     "static/media/FontAwesomeBrands-Regular.svg": "https://jefferson-william.github.io/teste-quero-bolsa/static/media/FontAwesomeBrands-Regular.bf1ab9b5.svg",
     "static/media/FontAwesomeBrands-Regular.ttf": "https://jefferson-william.github.io/teste-quero-bolsa/static/media/FontAwesomeBrands-Regular.f8614289.ttf",
+    "static/media/FontAwesomeLight-Regular.ttf": "https://jefferson-william.github.io/teste-quero-bolsa/static/media/FontAwesomeLight-Regular.14126655.ttf",
+    "static/media/FontAwesomeLight-Regular.woff2": "https://jefferson-william.github.io/teste-quero-bolsa/static/media/FontAwesomeLight-Regular.58494050.woff2",
+    "static/media/FontAwesomeLight-Regular.svg": "https://jefferson-william.github.io/teste-quero-bolsa/static/media/FontAwesomeLight-Regular.a6152eac.svg",
+    "static/media/FontAwesomeLight-Regular.woff": "https://jefferson-william.github.io/teste-quero-bolsa/static/media/FontAwesomeLight-Regular.c6c2df75.woff",
+    "static/media/FontAwesomeLight-Regular.eot": "https://jefferson-william.github.io/teste-quero-bolsa/static/media/FontAwesomeLight-Regular.dcf09260.eot",
     "static/media/FontAwesomeSolid-Bold.ttf": "https://jefferson-william.github.io/teste-quero-bolsa/static/media/FontAwesomeSolid-Bold.2aa6edf8.ttf",
     "static/media/FontAwesomeSolid-Bold.svg": "https://jefferson-william.github.io/teste-quero-bolsa/static/media/FontAwesomeSolid-Bold.7a5de9b0.svg",
     "static/media/FontAwesomeSolid-Bold.eot": "https://jefferson-william.github.io/teste-quero-bolsa/static/media/FontAwesomeSolid-Bold.7fb1cdd9.eot",
@@ -33,8 +38,8 @@
   "entrypoints": [
     "static/js/runtime-main.ee9eab42.js",
     "static/css/2.6d7d54d2.chunk.css",
-    "static/js/2.fd5ff0c9.chunk.js",
+    "static/js/2.70e84dde.chunk.js",
     "static/css/main.e355dd93.chunk.css",
-    "static/js/main.b8c17970.chunk.js"
+    "static/js/main.8eda12b7.chunk.js"
   ]
 }
