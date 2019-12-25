@@ -10,7 +10,12 @@ export default function reducer(state = INITIAL_STATE, action = {}) {
     case 'FAVORITE_SCHOLARSHIPS_SET_IDS':
       return {
         ...state,
-        ids: action.payload.ids.map(value => Number(value)),
+        ids: [
+          ...new Set([
+            ...state.ids,
+            ...action.payload.ids.map(value => Number(value)),
+          ]),
+        ],
       }
     case 'FAVORITE_SCHOLARSHIPS_SET_FILTER_SEMESTER':
       return {
