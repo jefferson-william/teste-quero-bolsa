@@ -16,6 +16,22 @@ git clone https://github.com/jefferson-william/teste-quero-bolsa.git
 cd teste-quero-bolsa ; yarn ; yarn start
 ```
 
+### Testes e2e
+
+Testes que simulam ações do usuário foram feitos com Cypress.
+
+```bash
+yarn e2e # or yarn e2e:background
+```
+
+### Testes unitários
+
+Feito com Jest.
+
+```bash
+yarn test
+```
+
 ### create-react-app
 
 Projeto foi iniciado com framework React.
