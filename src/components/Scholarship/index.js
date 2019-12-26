@@ -1,11 +1,12 @@
 import React from 'react'
+import shortid from 'shortid'
 import Stars from '~/components/Stars'
 import { Scholarship } from './styles'
 
 export default ({ data, handleRemove }) => {
   return (
     <Scholarship
-      id="Scholarship"
+      id={`Scholarship${shortid.generate()}`}
       className="scholarship"
       role="form"
       aria-label="Bolsa">
@@ -14,7 +15,9 @@ export default ({ data, handleRemove }) => {
         alt={`Logo da faculdade ${data.university.name}`}
       />
       <strong>{data.university.name}</strong>
-      <a className="scholarship__title" href="#Scholarship">
+      <a
+        className="scholarship__title"
+        href={`#Scholarship${shortid.generate()}`}>
         {data.course.name}
       </a>
       <div className="scholarship__punctuation">

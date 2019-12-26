@@ -21,7 +21,6 @@ export default ({ data, favorited, handleChecked }) => {
 
   return (
     <ModalScholarship
-      id="ModalScholarship"
       className="modal-scholarship"
       aria-label={`Bolsa da instituição ${data.university.name}`}
       onClick={ToggleChecked}>
