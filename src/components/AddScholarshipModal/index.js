@@ -299,7 +299,7 @@ export default ({ handleToggleModal }) => {
           <button
             type="button"
             className="button button--submit"
-            disabled={!checkedIds.length && !favoritedScholarshipsIds.length}
+            disabled={!checkedIds.length}
             onClick={HandleSubmit}>
             Adicionar bolsa(s)
           </button>
